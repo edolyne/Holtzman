@@ -1,9 +1,5 @@
 // @flow
-import {
-  ButtonText,
-  cardType,
-  Icon,
-} from "./";
+import { ButtonText, cardType, Icon } from "./";
 
 import { isIOS } from "../../../../../util";
 
@@ -33,10 +29,7 @@ const ActionButton = ({
             </em>
           </small>
         </p>
-        <button
-          className="btn soft-half-top one-whole"
-          onClick={completeGift}
-        >
+        <button className="btn soft-half-top one-whole" onClick={completeGift}>
           <ButtonText
             payment={payment}
             savedAccount={savedAccount}
@@ -45,11 +38,7 @@ const ActionButton = ({
             overrideText="Complete"
           />
           &nbsp;&nbsp;
-          <Icon
-            cardType={
-              cardType(payment, savedAccount)
-            }
-          />
+          <Icon cardType={cardType(payment, savedAccount)} />
         </button>
       </div>
     );
@@ -63,11 +52,7 @@ const ActionButton = ({
         scheduleToRecover={scheduleToRecover}
       />
       &nbsp;&nbsp;&nbsp;
-      <Icon
-        cardType={
-          cardType(payment, savedAccount)
-        }
-      />
+      <Icon cardType={cardType(payment, savedAccount)} />
     </button>
   );
 };

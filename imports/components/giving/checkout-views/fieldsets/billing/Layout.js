@@ -1,10 +1,7 @@
 // @flow
 
 import Forms from "../../../../@primitives/UI/forms";
-import {
-  StateOrTerritory,
-  Zip,
-} from "../shared";
+import { StateOrTerritory, Zip } from "../shared";
 
 type IHeader = {
   override?: React$Element<any>,
@@ -22,14 +19,10 @@ const Header = ({ override }: IHeader) => {
 type INextButton = {
   billing: Object,
   next: Function,
-  className: string
+  className: string,
 };
 
-const NextButton = ({
-  billing,
-  next,
-  className = ""
-}: INextButton) => {
+const NextButton = ({ billing, next, className = "" }: INextButton) => {
   const btnClasses = [className].concat(["push-left"]);
   let disabled = false;
   if (!billing.streetAddress || !billing.city) {
@@ -82,8 +75,8 @@ const Layout = ({
   streetAddress,
   streetAddress2,
   zip,
-  transactionType
-}: ILayout) => (
+  transactionType,
+}: ILayout) =>
   <div>
     <div className="push-double@lap-and-up push">
       <Header override={header} />
@@ -108,15 +101,17 @@ const Layout = ({
         defaultValue={billing.streetAddress2}
       />
 
-      {countries && countries.length > 0 && <Forms.Select
-        name="country"
-        label="Country"
-        errorText="Please enter your country"
-        defaultValue={billing.country ? billing.country : "US"}
-        items={countries}
-        validation={saveCountry}
-        includeBlank
-      />}
+      {countries &&
+        countries.length > 0 &&
+        <Forms.Select
+          name="country"
+          label="Country"
+          errorText="Please enter your country"
+          defaultValue={billing.country ? billing.country : "US"}
+          items={countries}
+          validation={saveCountry}
+          includeBlank
+        />}
 
       <Forms.Input
         name="city"
@@ -127,20 +122,19 @@ const Layout = ({
       />
 
       <div className="grid">
-        {states && states.length > 0 && <StateOrTerritory
-          billing={billing}
-          states={states}
-          saveState={saveState}
-        />}
-        <Zip
-          billing={billing}
-          zip={zip}
-        />
+        {states &&
+          states.length > 0 &&
+          <StateOrTerritory
+            billing={billing}
+            states={states}
+            saveState={saveState}
+          />}
+        <Zip billing={billing} zip={zip} />
       </div>
     </div>
 
     <div>
-      {transactionType !== "savedPayment" && (
+      {transactionType !== "savedPayment" &&
         <a
           href=""
           tabIndex={-1}
@@ -148,8 +142,7 @@ const Layout = ({
           className="btn--small btn--dark-tertiary display-inline-block"
         >
           Back
-        </a>
-      )}
+        </a>}
 
       <NextButton
         billing={billing}
@@ -158,12 +151,8 @@ const Layout = ({
       />
     </div>
 
-  </div>
-);
+  </div>;
 
 export default Layout;
 
-export {
-  Header,
-  NextButton,
-};
+export { Header, NextButton };

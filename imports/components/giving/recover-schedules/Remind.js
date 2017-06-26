@@ -22,16 +22,20 @@ const reminderFrequency = [
 ];
 
 /* eslint-disable max-len */
-const Remind = ({ onSubmit, back }: IRemind) => (
+const Remind = ({ onSubmit, back }: IRemind) =>
   <div className="soft soft-double-ends one-whole text-center">
     <h4 className="text-center push-ends">
       Remind Me Later
     </h4>
     <p className="text-left">
-       We know life is busy! We would be happy to remind you about transferring your schedules at a later date.
+      We know life is busy! We would be happy to remind you about transferring
+      your schedules at a
+      later date.
     </p>
     <p className="text-left push-double-bottom">
-      Please be aware that your existing schedule will continue to charge the account on file until you transfer it for editing in our new system.
+      Please be aware that your existing schedule will continue to charge the
+      account on file until
+      you transfer it for editing in our new system.
     </p>
 
     <Forms.Form
@@ -49,7 +53,9 @@ const Remind = ({ onSubmit, back }: IRemind) => (
         id="remind-frequency"
         hideLabel
         classes={["soft-bottom", "display-inline-block"]}
-        inputClasses={"outlined--dotted outlined--light h3 hard-top flush-bottom"}
+        inputClasses={
+          "outlined--dotted outlined--light h3 hard-top flush-bottom"
+        }
         includeBlank={false}
         defaultValue="tomorrow"
       />
@@ -68,7 +74,6 @@ const Remind = ({ onSubmit, back }: IRemind) => (
 
     </Forms.Form>
 
-  </div>
-);
+  </div>;
 
 export default Remind;

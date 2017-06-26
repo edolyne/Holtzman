@@ -1,4 +1,3 @@
-
 // @flow
 
 // $FlowMeteor
@@ -15,9 +14,16 @@ type IPrimary = {
   preFill: Function,
   changeFund: Function,
   changeAmount: Function,
-}
+};
 
-const Primary = ({ active, fundId, accounts, preFill, changeFund, changeAmount }: IPrimary) => (
+const Primary = ({
+  active,
+  fundId,
+  accounts,
+  preFill,
+  changeFund,
+  changeAmount,
+}: IPrimary) =>
   <div>
     <h3 className="text-dark-primary display-inline-block push-half-bottom push-half-right">
       I&#39;d like to give
@@ -27,14 +33,20 @@ const Primary = ({ active, fundId, accounts, preFill, changeFund, changeAmount }
       hideLabel
       type={Meteor.isCordova ? "text" : "tel"}
       classes={["soft-bottom", "input--active", "display-inline-block"]}
-      inputClasses={`outlined--dotted outlined--light h3 hard-top flush-bottom text-brand ${css(Styles["show-placeholder"])}`}
+      inputClasses={`outlined--dotted outlined--light h3 hard-top flush-bottom text-brand ${css(
+        Styles["show-placeholder"],
+      )}`}
       placeholder="$0.00"
       format={changeAmount}
       defaultValue={preFill(fundId)}
       style={{ maxWidth: "150px" }}
     />
 
-    <h3 className={"text-dark-primary display-inline-block push-half-bottom push-half-right"}>
+    <h3
+      className={
+        "text-dark-primary display-inline-block push-half-bottom push-half-right"
+      }
+    >
       to
     </h3>
     {/* temporary hack */}
@@ -44,12 +56,13 @@ const Primary = ({ active, fundId, accounts, preFill, changeFund, changeAmount }
       name="select-account"
       hideLabel
       classes={["soft-bottom", "display-inline-block", css(Styles.select)]}
-      inputClasses={`${active ? "text-primary" : "text-dark-tertiary"} outlined--dotted outlined--light h3 hard-top flush-bottom`}
+      inputClasses={`${active
+        ? "text-primary"
+        : "text-dark-tertiary"} outlined--dotted outlined--light h3 hard-top flush-bottom`}
       placeholder="select fund"
       onChange={changeFund}
       selected={fundId}
     />
-  </div>
-);
+  </div>;
 
 export default Primary;

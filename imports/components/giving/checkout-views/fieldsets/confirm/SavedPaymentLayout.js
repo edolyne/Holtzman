@@ -1,4 +1,3 @@
-
 // @flow
 
 import { AccountNumber, Icon, cardType } from "../shared/";
@@ -54,7 +53,9 @@ export default ({
 
         <h7 className="display-block text-dark-tertiary">Account Details</h7>
         <h6>
-          <AccountNumber accountNumber={payment.cardNumber || payment.accountNumber} />
+          <AccountNumber
+            accountNumber={payment.cardNumber || payment.accountNumber}
+          />
           &nbsp;&nbsp;
           <Icon width="19px" height="12px" cardType={cardType(paymentInfo)} />
         </h6>
@@ -64,7 +65,10 @@ export default ({
 
         <hr />
 
-        <button className="btn one-whole push-double-top soft-sides push-half-bottom" type="submit">
+        <button
+          className="btn one-whole push-double-top soft-sides push-half-bottom"
+          type="submit"
+        >
           Create Account
         </button>
 

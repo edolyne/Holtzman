@@ -7,14 +7,14 @@ type ILayout = {
   selectedAccount: Object,
   chooseAccount: Function,
   changeAccounts: Function,
-}
+};
 
 const Layout = ({
   savedAccounts,
   selectedAccount,
   chooseAccount,
   changeAccounts,
-}: ILayout) => (
+}: ILayout) =>
   <div className="soft-double-top">
     <div className="soft-sides flush-bottom push-double-top@lap-and-up">
       <h4 className="text-center flush-bottom">
@@ -22,7 +22,7 @@ const Layout = ({
       </h4>
     </div>
     <div className="soft">
-      {savedAccounts.map((account, key) => (
+      {savedAccounts.map((account, key) =>
         <PaymentCard
           key={key}
           onClick={chooseAccount}
@@ -31,8 +31,8 @@ const Layout = ({
           paymentAccount={account.payment.accountNumber}
           paymentType={account.payment.paymentType}
           selectedAccountId={selectedAccount.id}
-        />
-      ))}
+        />,
+      )}
       <button
         className="btn one-whole push-double-top soft-sides push-bottom"
         onClick={changeAccounts}
@@ -43,12 +43,12 @@ const Layout = ({
       <p>
         <small>
           <em>
-            You can enter a new payment account before confirming your contribution.
+            You can enter a new payment account before confirming your
+            contribution.
           </em>
         </small>
       </p>
     </div>
-  </div>
-);
+  </div>;
 
 export default Layout;

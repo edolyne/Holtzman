@@ -1,6 +1,6 @@
 import { PropTypes } from "react";
 
-const SignOut = ({ signout }) => (
+const SignOut = ({ signout }) =>
   <div>
     <div className="push-double-ends soft-half-sides">
       <h4 className="text-center">
@@ -12,8 +12,7 @@ const SignOut = ({ signout }) => (
         Sign Out
       </button>
     </div>
-  </div>
-);
+  </div>;
 
 SignOut.propTypes = {
   signout: PropTypes.func,

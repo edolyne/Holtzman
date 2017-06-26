@@ -15,10 +15,7 @@ const LoadMore = ({ loadMore, search }) => {
   if (!search.done) {
     return (
       <div className="text-center push-double-top">
-        <button
-          className="btn--dark-tertiary"
-          onClick={loadMore}
-        >
+        <button className="btn--dark-tertiary" onClick={loadMore}>
           <LoadingText search={search} />
         </button>
       </div>
@@ -35,7 +32,7 @@ const Results = ({ loadMore, search }) => {
   if (search.items.length > 0) {
     return (
       <section className="background--light-secondary soft-half@palm soft@palm-wide-and-up">
-        { search.items.map((item, i) => (<Item item={item} key={i} />))}
+        {search.items.map((item, i) => <Item item={item} key={i} />)}
         <LoadMore loadMore={loadMore} search={search} />
       </section>
     );
@@ -64,7 +61,4 @@ Results.propTypes = {
 
 export default Results;
 
-export {
-  LoadingText,
-  LoadMore,
-};
+export { LoadingText, LoadMore };

@@ -2,9 +2,11 @@
 
 import { Error } from "../../@primitives/UI/icons";
 
-const ERROR_HEADING = "Uh Oh! Looks like there was a problem processing your contribution!";
+const ERROR_HEADING =
+  "Uh Oh! Looks like there was a problem processing your contribution!";
 const STEP_ONE_MESSAGE = "Try Again";
-const CONTACT_MESSAGE = "If you would like a member of our customer support team to follow up with you regarding this error, click";
+const CONTACT_MESSAGE =
+  "If you would like a member of our customer support team to follow up with you regarding this error, click";
 
 type IStepOneAction = {
   goToStepOne?: Function,
@@ -14,7 +16,10 @@ const StepOneAction = ({ goToStepOne }: IStepOneAction) => {
   if (!goToStepOne) return null;
   return (
     <div className="one-whole text-center soft-ends">
-      <button onClick={goToStepOne} className="btn--small btn--dark-tertiary one-whole">
+      <button
+        onClick={goToStepOne}
+        className="btn--small btn--dark-tertiary one-whole"
+      >
         {STEP_ONE_MESSAGE}
       </button>
     </div>
@@ -30,23 +35,21 @@ const AdditionalMessage = ({ additionalMessage }: IAdditionalMessage) => {
   return <h5>{additionalMessage}</h5>;
 };
 
-const ContactLink = () => (
+const ContactLink = () =>
   <a
     target="_blank"
     rel="noopener noreferrer"
     href="//rock.newspring.cc/workflows/152?Topic=Stewardship"
   >
     here
-  </a>
-);
+  </a>;
 
-const ContactUs = () => (
+const ContactUs = () =>
   <p className="test-dark-tertiary text-left">
     <em>
       {CONTACT_MESSAGE} <ContactLink />
     </em>
-  </p>
-);
+  </p>;
 
 type IErr = {
   msg: string,
@@ -54,7 +57,7 @@ type IErr = {
   additionalMessage?: string,
 };
 
-const Err = ({ msg, goToStepOne, additionalMessage }: IErr) => (
+const Err = ({ msg, goToStepOne, additionalMessage }: IErr) =>
   <div className="soft soft-double-ends push-double-top@anchored one-whole text-center">
     <div className="push-double-top">
       <Error />
@@ -69,14 +72,8 @@ const Err = ({ msg, goToStepOne, additionalMessage }: IErr) => (
 
       <ContactUs />
     </div>
-  </div>
-);
+  </div>;
 
 export default Err;
 
-export {
-  StepOneAction,
-  AdditionalMessage,
-  ContactLink,
-  ContactUs,
-};
+export { StepOneAction, AdditionalMessage, ContactLink, ContactUs };

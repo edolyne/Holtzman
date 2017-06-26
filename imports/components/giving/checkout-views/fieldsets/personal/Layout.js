@@ -20,10 +20,7 @@ type INextButton = {
   next: Function,
 };
 
-const NextButton = ({
-  personal,
-  next,
-}: INextButton) => {
+const NextButton = ({ personal, next }: INextButton) => {
   const btnClasses = [];
   let disabled = false;
   if (
@@ -72,7 +69,7 @@ const Layout = ({
   lastName,
   next,
   personal,
-}: ILayout) => (
+}: ILayout) =>
   <div>
     <div className="push-double@lap-and-up push">
       <Header override={header} />
@@ -113,7 +110,11 @@ const Layout = ({
         defaultValue={personal.email}
       />
 
-      <style>{".input--active select { color: #303030 }; .input--focused label { color: #858585 }"}</style>
+      <style>
+        {
+          ".input--active select { color: #303030 }; .input--focused label { color: #858585 }"
+        }
+      </style>
       <Forms.Select
         defaultValue={personal.campusId}
         errorText="Please choose a campus"
@@ -126,16 +127,9 @@ const Layout = ({
       />
     </div>
 
-    <NextButton
-      personal={personal}
-      next={next}
-    />
-  </div>
-);
+    <NextButton personal={personal} next={next} />
+  </div>;
 
 export default Layout;
 
-export {
-  Header,
-  NextButton,
-};
+export { Header, NextButton };

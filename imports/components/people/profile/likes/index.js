@@ -1,4 +1,3 @@
-
 import { PropTypes } from "react";
 
 import Loading from "../../../@primitives/UI/loading";
@@ -33,7 +32,7 @@ RenderLikes.propTypes = {
   recentLikes: PropTypes.array,
 };
 
-const LikesContainer = (props) => {
+const LikesContainer = props => {
   const { likes, recentLikes } = props;
 
   return (
@@ -54,9 +53,6 @@ LikesContainer.propTypes = {
   recentLikes: PropTypes.array,
 };
 
-export {
-  LikesContainer,
-  RenderLikes,
-};
+export { LikesContainer, RenderLikes };
 
 export default withUserLikes(withRecentLikes(LikesContainer));

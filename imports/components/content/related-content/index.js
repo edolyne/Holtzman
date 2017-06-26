@@ -43,7 +43,7 @@ export const RELATED_CONTENT_QUERY = gql`
 const defaultArray = [];
 export const withRelatedContent = graphql(RELATED_CONTENT_QUERY, {
   name: "content",
-  options: (ownProps) => ({
+  options: ownProps => ({
     variables: {
       tags: ownProps.tags || defaultArray,
       includeChannels: ownProps.includeChannels || defaultArray,
@@ -59,11 +59,11 @@ type ITemplate = {
 };
 
 export class Template extends Component {
-  props: ITemplate
+  props: ITemplate;
 
   static defaultProps = {
     title: "More Like This",
-  }
+  };
 
   render() {
     const { taggedContent, loading } = this.props.content;

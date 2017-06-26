@@ -39,7 +39,7 @@
     "compat"
   ],
   "rules": {
-    "arrow-parens": [2, "always"],
+    "arrow-parens": [2, "as-needed"],
     "quotes": [2, "double"],
     "import/extensions": 0,
     "import/no-absolute-path": 0,

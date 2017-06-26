@@ -1,21 +1,17 @@
 // @flow
 import Forms from "../../../../@primitives/UI/forms";
 import { creditCard } from "../../../../../util/format";
-import {
-  cardType,
-  Icon,
-} from "./";
+import { cardType, Icon } from "./";
 
 type IRenderIcon = {
   payment: Object,
   savedAccount: Object,
 };
 
-const RenderIcon = ({
-  payment,
-  savedAccount,
-}: IRenderIcon) => {
-  const masked = payment.type === "ach" ? payment.accountNumber : payment.cardNumber;
+const RenderIcon = ({ payment, savedAccount }: IRenderIcon) => {
+  const masked = payment.type === "ach"
+    ? payment.accountNumber
+    : payment.cardNumber;
   if (!masked) return null;
 
   const paymentType = cardType(payment, savedAccount);
@@ -54,11 +50,11 @@ const CardFields = ({
         onChange={saveData}
         validation={validate}
       >
-        <div className="locked locked-right soft-double-right locked-top" style={{ top: "-3px" }}>
-          <RenderIcon
-            payment={payment}
-            savedAccount={savedAccount}
-          />
+        <div
+          className="locked locked-right soft-double-right locked-top"
+          style={{ top: "-3px" }}
+        >
+          <RenderIcon payment={payment} savedAccount={savedAccount} />
         </div>
       </Forms.Input>
       <div className="grid">
@@ -95,6 +91,4 @@ const CardFields = ({
 
 export default CardFields;
 
-export {
-  RenderIcon,
-};
+export { RenderIcon };

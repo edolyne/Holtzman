@@ -7,7 +7,7 @@ type IScheduleItem = {
   total: number,
 };
 
-const ScheduleItem = ({ schedule, total }: IScheduleItem) => (
+const ScheduleItem = ({ schedule, total }: IScheduleItem) =>
   <div className="display-inline-block one-whole">
     <h5 className="text-dark-secondary text-left">
       Starting on {moment(schedule.start).format("MMM D, YYYY")},
@@ -15,7 +15,6 @@ const ScheduleItem = ({ schedule, total }: IScheduleItem) => (
       to {schedule.label}.
       This will occur {schedule.frequency.toLowerCase()}.
     </h5>
-  </div>
-);
+  </div>;
 
 export default ScheduleItem;

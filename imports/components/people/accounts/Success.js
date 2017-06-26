@@ -1,12 +1,11 @@
 import { PropTypes } from "react";
 import { Link } from "react-router";
 
-const Success = ({ person, onExit }) => (
-
+const Success = ({ person, onExit }) =>
   <div className="soft soft-double-ends one-whole text-center">
 
     <h4 className="text-center push-ends">
-      Welcome{person.nickName ? ` ${(person.nickName || person.firstName)}` : ""}!
+      Welcome{person.nickName ? ` ${person.nickName || person.firstName}` : ""}!
     </h4>
 
     <p className="text-left">
@@ -16,21 +15,22 @@ const Success = ({ person, onExit }) => (
       we would love if you could complete your profile.
     </p>
 
-    <Link to="/profile/settings" className="one-whole btn push-ends" >
+    <Link to="/profile/settings" className="one-whole btn push-ends">
       Complete Profile Now
     </Link>
 
-    <button className="btn--thin btn--small btn--dark-tertiary one-whole " onClick={onExit}>
+    <button
+      className="btn--thin btn--small btn--dark-tertiary one-whole "
+      onClick={onExit}
+    >
       Complete Later
     </button>
 
-  </div>
-);
+  </div>;
 
 Success.propTypes = {
   person: PropTypes.object, // eslint-disable-line
   onExit: PropTypes.func,
 };
-
 
 export default Success;

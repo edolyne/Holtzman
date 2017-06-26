@@ -10,7 +10,7 @@ export default class Marker extends Component {
     $hover: PropTypes.bool,
     hover: PropTypes.bool,
     active: PropTypes.bool,
-    children: PropTypes.any, // eslint-disable-line
+    children: PropTypes.any // eslint-disable-line
   };
 
   static defaultProps = {};
@@ -18,7 +18,7 @@ export default class Marker extends Component {
   shouldComponentUpdate = shouldPureComponentUpdate;
 
   render() {
-    let style = (this.props.$hover || this.props.hover) ? hover : base;
+    let style = this.props.$hover || this.props.hover ? hover : base;
 
     if (this.props.active) style = active;
 

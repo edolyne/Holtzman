@@ -7,11 +7,7 @@ type IBankFields = {
   validate: Function,
 };
 
-const BankFields = ({
-  payment,
-  saveData,
-  validate,
-}: IBankFields) => {
+const BankFields = ({ payment, saveData, validate }: IBankFields) => {
   if (payment.type !== "ach") return null;
   return (
     <div>
@@ -37,7 +33,6 @@ const BankFields = ({
         onChange={saveData}
         validation={validate}
       />
-
 
       <div className="grid">
 

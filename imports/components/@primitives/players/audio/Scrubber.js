@@ -9,19 +9,18 @@ import Styles from "./styles/scrubber";
 import { actions as audioActions } from "../../../../data/store/audio";
 
 class AudioScrubberWithoutData extends Component {
-
   static propTypes = {
     isLight: PropTypes.bool.isRequired,
-    audio: PropTypes.Object,
-  }
+    audio: PropTypes.Object
+  };
 
   state = {
     lastPercent: null,
     // This allows us to track if a user is scrubbing,
     // this way a click event doesn't also fire
     scrubbing: false,
-    override: false,
-  }
+    override: false
+  };
 
   // Added cleanup methods for timeOut events
   componentWillUnmount() {
@@ -29,7 +28,7 @@ class AudioScrubberWithoutData extends Component {
     if (this.onClickTimeout) clearTimeout(this.onClickTimeout);
   }
 
-  click = (e) => {
+  click = e => {
     // We are checking if a scrub is currently taking place,
     // as a onTouchEnd and Click event were both happening on scrub.
     const { scrubbing } = this.state;
@@ -41,7 +40,7 @@ class AudioScrubberWithoutData extends Component {
       // Setting the state allows our time, and position to consistantly update.
       this.setState({
         lastPercent: percentClicked,
-        override: true,
+        override: true
       });
 
       this.seek(percentClicked);
@@ -51,11 +50,11 @@ class AudioScrubberWithoutData extends Component {
       // Timeout is a full second as a shorter timeout did not set the state appropriatly.
       this.onClickTimeout = setTimeout(() => {
         this.setState({
-          override: false,
+          override: false
         });
       }, 1000);
     }
-  }
+  };
 
   calculatePercent = (targetElement, clickedX) => {
     const { left } = targetElement.parentElement.getClientRects()[0];
@@ -65,59 +64,51 @@ class AudioScrubberWithoutData extends Component {
 
     if (percentClicked > 100) {
       percentClicked = 100;
-    }
-    else if (percentClicked < 0) {
+    } else if (percentClicked < 0) {
       percentClicked = 0;
     }
 
     return percentClicked;
-  }
+  };
 
-  seek = (percentClicked) => {
+  seek = percentClicked => {
     if (percentClicked > 100) {
       percentClicked = 100;
-    }
-    else if (percentClicked < 0) {
+    } else if (percentClicked < 0) {
       percentClicked = 0;
     }
     this.props.seek(percentClicked);
-  }
+  };
 
-  getTertiaryBackgroundColor = dark => (
-    dark ? { backgroundColor: "rgba(255,255,255,.2)" } : { backgroundColor: "rgba(0,0,0,.2)" }
-  )
+  getTertiaryBackgroundColor = dark =>
+    dark ? { backgroundColor: "rgba(255,255,255,.2)" } : { backgroundColor: "rgba(0,0,0,.2)" };
 
-  getTertiaryTextColor = dark => (
-    dark ? { color: "rgba(255,255,255,.5)" } : { color: "rgba(0,0,0,.5)" }
-  )
+  getTertiaryTextColor = dark =>
+    dark ? { color: "rgba(255,255,255,.5)" } : { color: "rgba(0,0,0,.5)" };
 
-  getSecondayBackgroundClass = dark => (
-    dark ? "background--dark-secondary" : "background--light-secondary"
-  )
+  getSecondayBackgroundClass = dark =>
+    dark ? "background--dark-secondary" : "background--light-secondary";
 
-  getPrimaryBackgroundClass = dark => (
-    dark ? "background--dark-primary" : "background--light-primary"
-  )
+  getPrimaryBackgroundClass = dark =>
+    dark ? "background--dark-primary" : "background--light-primary";
 
-  getTertiaryTextClass = dark => (
-    dark ? "text-dark-tertiary" : "text-light-tertiary"
-  )
+  getTertiaryTextClass = dark => (dark ? "text-dark-tertiary" : "text-light-tertiary");
 
-  getTrackDuration = () => (this.props.audio.playing.track.duration);
+  getTrackDuration = () => this.props.audio.playing.track.duration;
 
   getCurrentTime = () => {
     const { time } = this.props.audio;
     return time;
   };
 
-  touchMove = (e) => {
+  touchMove = e => {
     const percent = this.calculatePercent(e.target, e.touches[0].clientX);
 
     this.setState({
       lastPercent: percent,
       // A scrub event is taking place, so we don't want a click event also
       scrubbing: true,
-      override: true,
+      override: true
     });
   };
 
@@ -135,11 +126,10 @@ class AudioScrubberWithoutData extends Component {
       // set this states properly.
       this.setState({
         scrubbing: false,
-        override: false,
+        override: false
       });
     }, 1000);
-  }
-
+  };
 
   scrubStyle = () => {
     let { progress } = this.props.audio;
@@ -149,23 +139,22 @@ class AudioScrubberWithoutData extends Component {
     }
 
     return {
-      width: `${progress}%`,
+      width: `${progress}%`
     };
   };
 
   render() {
     const { isLight } = this.props;
 
-    const playbar = [
-      "play-bar",
-      "rounded",
-      css(Styles["play-bar"]),
-    ];
+    const playbar = ["play-bar", "rounded", css(Styles["play-bar"])];
 
     return (
       <div className="grid one-whole flush soft-top">
 
-        <div className="hard grid__item one-tenth floating__item " style={this.getTertiaryTextColor(!isLight)}>
+        <div
+          className="hard grid__item one-tenth floating__item "
+          style={this.getTertiaryTextColor(!isLight)}
+        >
           <small>
             <small>
               {this.getCurrentTime()}
@@ -180,27 +169,34 @@ class AudioScrubberWithoutData extends Component {
           onTouchMove={this.touchMove}
           onClick={this.click}
         >
-          <div
-            className={playbar.join(" ")}
-            style={this.getTertiaryBackgroundColor(!isLight)}
-          />
+          <div className={playbar.join(" ")} style={this.getTertiaryBackgroundColor(!isLight)} />
           <div
             className={css(Styles["play-bar--active"]) + " floating--right"}
             style={this.scrubStyle()}
           >
             <div
-              className={css(Styles["play-bar"]) + " " + "rounded " + this.getPrimaryBackgroundClass(isLight)}
+              className={
+                css(Styles["play-bar"]) + " " + "rounded " + this.getPrimaryBackgroundClass(isLight)
+              }
             />
             <button
-              className={css(Styles["scrub-dot"]) + " plain floating__item round " + this.getPrimaryBackgroundClass(isLight)}
+              className={
+                css(Styles["scrub-dot"]) +
+                " plain floating__item round " +
+                this.getPrimaryBackgroundClass(isLight)
+              }
             />
           </div>
           <div
-            className="cover" style={{ position: "absolute", top: "-20px", bottom: 0, left: 0, right: 0 }}
+            className="cover"
+            style={{ position: "absolute", top: "-20px", bottom: 0, left: 0, right: 0 }}
           />
         </div>
 
-        <div className="hard grid__item one-tenth floating__item " style={this.getTertiaryTextColor(!isLight)}>
+        <div
+          className="hard grid__item one-tenth floating__item "
+          style={this.getTertiaryTextColor(!isLight)}
+        >
           <small>
             <small>
               {this.getTrackDuration()}
@@ -219,8 +215,4 @@ const withRedux = connect(map, audioActions);
 
 export default withRedux(AudioScrubberWithoutData);
 
-export {
-  AudioScrubberWithoutData,
-  map,
-  withRedux,
-};
+export { AudioScrubberWithoutData, map, withRedux };
