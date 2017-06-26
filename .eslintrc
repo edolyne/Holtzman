@@ -34,6 +34,7 @@
     "device": true
   },
   "plugins": [
+    "prettier",
     "jsx-a11y",
     "compat"
   ],
@@ -78,6 +79,12 @@
     "jsx-a11y/role-supports-aria-props": 1,
     "jsx-a11y/scope": 1,
     "jsx-a11y/tabindex-no-positive": 1,
+    "prettier/prettier": [
+      "error",
+        {
+          "trailingComma": "all"
+        }
+      ],
     "react/sort-comp": [1, {
       order: [
         'type-annotations',
