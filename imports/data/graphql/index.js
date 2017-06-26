@@ -1,4 +1,3 @@
-
 import { Meteor } from "meteor/meteor";
 // eslint-disable-next-line
 import { DDP } from "meteor/ddp";
@@ -6,7 +5,9 @@ import { Accounts } from "meteor/accounts-base";
 
 import ApolloClient, { createNetworkInterface } from "apollo-client";
 
-const networkInterface = createNetworkInterface({ uri: Meteor.settings.public.heighliner });
+const networkInterface = createNetworkInterface({
+  uri: Meteor.settings.public.heighliner,
+});
 
 const authMiddleware = {
   applyMiddleware(req, next) {
@@ -45,9 +46,7 @@ const authMiddleware = {
   },
 };
 
-networkInterface.use([
-  authMiddleware,
-]);
+networkInterface.use([authMiddleware]);
 
 const GraphQL = new ApolloClient({
   networkInterface,
@@ -57,8 +56,4 @@ const GraphQL = new ApolloClient({
 
 export default GraphQL;
 
-export {
-  GraphQL,
-  networkInterface,
-  authMiddleware,
-};
+export { GraphQL, networkInterface, authMiddleware };
