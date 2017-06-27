@@ -1,4 +1,3 @@
-
 import { Component, PropTypes } from "react";
 import gql from "graphql-tag";
 
@@ -28,13 +27,12 @@ export const campusLookup = gql`
 `;
 
 export default class Layout extends Component {
-
   static propTypes = {
     data: PropTypes.object.isRequired,
     client: PropTypes.object,
-  }
+  };
 
-  state = { value: null, list: null }
+  state = { value: null, list: null };
 
   dynamicItemWidth = () => {
     if (typeof window !== "undefined" || window !== null) {
@@ -44,7 +42,7 @@ export default class Layout extends Component {
     }
 
     return {};
-  }
+  };
 
   dynamicWidth = () => {
     const { campuses } = this.props.data;
@@ -55,30 +53,31 @@ export default class Layout extends Component {
       const ratio = window.isTablet ? 0.4 : 0.8;
       let itemSize = (window.innerWidth - 40) * ratio; // four-fifths
       itemSize += 20; // account for margin
-      const items = campuses.filter((x) => x.location.street1).length;
-      const width = (items * itemSize) + 40;
+      const items = campuses.filter(x => x.location.street1).length;
+      const width = items * itemSize + 40;
       return { width: `${width}px` };
     }
 
     return {};
-  }
+  };
 
-  findByQuery = (e) => {
+  findByQuery = e => {
     if (e && e.preventDefault) e.preventDefault();
     document.getElementById("search").blur();
     const { value } = document.getElementById("search");
 
-    const campusList = this.props.data.campuses.filter((x) => x.location.street1);
-    const destinations = campusList.map((campus) => (
-      `${campus.location.street1} ${campus.location.zip}`
-    )).join("|");
+    const campusList = this.props.data.campuses.filter(x => x.location.street1);
+    const destinations = campusList
+      .map(campus => `${campus.location.street1} ${campus.location.zip}`)
+      .join("|");
 
     const origin = value;
     // XXX this will break with new react-apollo
-    this.props.client.query({
-      query: campusLookup,
-      variables: { destinations, origin },
-    })
+    this.props.client
+      .query({
+        query: campusLookup,
+        variables: { destinations, origin },
+      })
       .then(({ data }) => {
         const byLocations = [...data.geolocate.rows[0].elements];
         return byLocations.map((x, i) => {
@@ -86,21 +85,26 @@ export default class Layout extends Component {
           return campusList[i];
         });
       })
-      .then((list) => _.sortBy(list, ((x) => x.distance.value)))
-      .then((list) => this.setState({ list }))
+      .then(list => _.sortBy(list, x => x.distance.value))
+      .then(list => this.setState({ list }))
       .then(() => {
         const element = this.slider;
-        element.children[0].scrollIntoView({ block: "end", behavior: "smooth" });
+        element.children[0].scrollIntoView({
+          block: "end",
+          behavior: "smooth",
+        });
         element.parentElement.scrollLeft += -20;
       })
-      .catch(() => { /* do nothing */ });
-  }
+      .catch(() => {
+        /* do nothing */
+      });
+  };
 
   overflow = {
     overflowX: "scroll",
     overflowY: "hidden",
     WebkitOverflowScrolling: "touch",
-  }
+  };
 
   render() {
     let { campuses } = this.props.data;
@@ -120,7 +124,7 @@ export default class Layout extends Component {
           <h3 className="push-half-ends">Find Your Closest Campus</h3>
           <Forms.Form
             classes={["hard", "display-inline-block", "one-whole"]}
-            submit={(e) => this.findByQuery(e)}
+            submit={e => this.findByQuery(e)}
           >
             <i className="icon-search locked-left soft-half-left" />
             {/* <span
@@ -152,45 +156,60 @@ export default class Layout extends Component {
             <section
               className="soft-half"
               style={this.dynamicWidth()}
-              ref={(n) => { this.slider = n; }}
+              ref={n => {
+                this.slider = n;
+              }}
             >
-              {campuses && campuses.filter((x) => x.location.street1).map((campus, i) => {
-                const style = this.dynamicItemWidth();
-                if (i === 0 && this.state.list) {
-                  style.borderColor = "#6bac43";
-                  style.borderStyle = "solid";
-                  style.borderWidth = "3px";
-                }
-                return (
-                  <Link
-                    key={campus.id || i}
-                    to={campus.url}
-                    className={
-                      "text-dark-secondary transition floating ratio--square " +
-                      "display-inline-block rounded  push-right card text-left"
-                    }
-                    style={style}
-                  >
-                    <div className="one-whole soft-sides text-left floating__item">
-                      <h4>{campus.name}</h4>
-                      {(() => {
-                        if (!campus.distance || !campus.distance.value) return null;
-                        return (
-                          <h7 className="italic display-block">
-                            {(campus.distance.value * 0.000621371192).toFixed(2)} miles away
-                          </h7>
-                        );
-                      })()}
-                      {campus.services && campus.services.map((x, key) =>
-                        (<p className="flush-bottom soft-half-bottom" key={key}>{x}</p>))
+              {campuses &&
+                campuses.filter(x => x.location.street1).map((campus, i) => {
+                  const style = this.dynamicItemWidth();
+                  if (i === 0 && this.state.list) {
+                    style.borderColor = "#6bac43";
+                    style.borderStyle = "solid";
+                    style.borderWidth = "3px";
+                  }
+                  return (
+                    <Link
+                      key={campus.id || i}
+                      to={campus.url}
+                      className={
+                        "text-dark-secondary transition floating ratio--square " +
+                        "display-inline-block rounded  push-right card text-left"
                       }
-                      <h5 className="text-primary plain">
-                        Learn More <span className="icon-arrow-next text-primary" />
-                      </h5>
-                    </div>
-                  </Link>
-                );
-              })}
+                      style={style}
+                    >
+                      <div className="one-whole soft-sides text-left floating__item">
+                        <h4>{campus.name}</h4>
+                        {(() => {
+                          if (!campus.distance || !campus.distance.value) {
+                            return null;
+                          }
+                          return (
+                            <h7 className="italic display-block">
+                              {(campus.distance.value * 0.000621371192).toFixed(
+                                2,
+                              )}{" "}
+                              miles away
+                            </h7>
+                          );
+                        })()}
+                        {campus.services &&
+                          campus.services.map((x, key) =>
+                            <p
+                              className="flush-bottom soft-half-bottom"
+                              key={key}
+                            >
+                              {x}
+                            </p>,
+                          )}
+                        <h5 className="text-primary plain">
+                          Learn More{" "}
+                          <span className="icon-arrow-next text-primary" />
+                        </h5>
+                      </div>
+                    </Link>
+                  );
+                })}
             </section>
           </div>
         </div>

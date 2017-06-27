@@ -4,12 +4,11 @@ import { Link } from "react-router";
 import content from "../../util/content";
 
 export default class StudiesEntryListItem extends Component {
-
   static propTypes = {
     studyEntry: PropTypes.object.isRequired,
     order: PropTypes.number.isRequired,
     light: PropTypes.boolean,
-  }
+  };
 
   dynamicWidth = () => {
     const defaults = {};
@@ -24,7 +23,7 @@ export default class StudiesEntryListItem extends Component {
     }
 
     return defaults;
-  }
+  };
 
   orderStyle = () => {
     const defaults = {
@@ -39,7 +38,7 @@ export default class StudiesEntryListItem extends Component {
     }
 
     return defaults;
-  }
+  };
 
   render() {
     const { light, studyEntry, order } = this.props;
@@ -49,7 +48,9 @@ export default class StudiesEntryListItem extends Component {
         to={content.links(studyEntry)}
         className={`
           text-dark-secondary floating ratio--square display-inline-block
-          rounded ${light ? "background--light-primary" : "background--light-tertiary"} push-right
+          rounded ${light
+            ? "background--light-primary"
+            : "background--light-tertiary"} push-right
         `}
         style={this.dynamicWidth()}
       >
@@ -65,5 +66,4 @@ export default class StudiesEntryListItem extends Component {
       </Link>
     );
   }
-
 }

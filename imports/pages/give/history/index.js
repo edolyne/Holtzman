@@ -23,7 +23,7 @@ class TemplateWithoutData extends Component {
     Loading: PropTypes.func.isRequired,
     done: PropTypes.bool,
     filter: PropTypes.shape({
-      family: PropTypes.array, // eslint-disable-line
+      family: PropTypes.array // eslint-disable-line
     }),
     setRightProps: PropTypes.func,
     currentVariables: PropTypes.object,
@@ -34,18 +34,18 @@ class TemplateWithoutData extends Component {
 
   componentWillMount() {
     this.props.setRightProps({
-      background: "////dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/_fpo/NScollege-cip-0033_1700_1133_90_c1.jpg",
+      background:
+        "////dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/_fpo/NScollege-cip-0033_1700_1133_90_c1.jpg",
     });
   }
 
-  wrapRefetch = (refetch: Function) =>
-    (...args: Object[]) => {
-      this.setState({ refetching: true });
-      return refetch(...args).then((x) => {
-        this.setState({ refetching: false });
-        return x;
-      });
-    };
+  wrapRefetch = (refetch: Function) => (...args: Object[]) => {
+    this.setState({ refetching: true });
+    return refetch(...args).then(x => {
+      this.setState({ refetching: false });
+      return x;
+    });
+  };
 
   onPrintClick = (e: Event) => {
     e.preventDefault();
@@ -125,7 +125,7 @@ const GET_STATEMENT = gql`
 `;
 
 const withStatement = graphql(GET_STATEMENT, {
-  props: ({ mutate }) => ({ getPDF: (variables) => mutate({ variables }) }),
+  props: ({ mutate }) => ({ getPDF: variables => mutate({ variables }) }),
 });
 
 const TRANSACTIONS_QUERY = gql`
@@ -171,10 +171,12 @@ const withTransactions = graphql(TRANSACTIONS_QUERY, {
     currentVariables: data.variables,
     transactions: data.transactions || [],
     loading: data.loading,
-    done: data.variables.limit === 0 ||
-      (data.transactions &&
-        !data.loading &&
-        data.transactions.length < data.variables.limit + data.variables.skip),
+    done:
+      data.variables.limit === 0 ||
+        (data.transactions &&
+          !data.loading &&
+          data.transactions.length <
+            data.variables.limit + data.variables.skip),
     fetchMore: () =>
       data.fetchMore({
         variables: { ...data.variables, skip: data.transactions.length },
@@ -185,7 +187,7 @@ const withTransactions = graphql(TRANSACTIONS_QUERY, {
             ...fetchMoreResult.data.transactions,
           ];
           return {
-            transactions: transactions.filter((x) => !!x.id),
+            transactions: transactions.filter(x => !!x.id),
           };
         },
       }),

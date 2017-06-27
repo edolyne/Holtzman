@@ -9,9 +9,9 @@ export default class Layout extends Component {
   static propTypes = {
     home: PropTypes.object,
     update: PropTypes.func,
-  }
+  };
 
-  submit = (e) => {
+  submit = e => {
     e.preventDefault();
 
     const data = {};
@@ -27,18 +27,12 @@ export default class Layout extends Component {
     }
 
     this.props.update(data);
-  }
+  };
 
   render() {
     const { home } = this.props;
 
-    const {
-      city,
-      zip,
-      state,
-      street1,
-      street2,
-    } = home;
+    const { city, zip, state, street1, street2 } = home;
 
     return (
       <div
@@ -132,7 +126,6 @@ export default class Layout extends Component {
               </button>
             );
           })()}
-
 
         </Forms.Form>
       </div>

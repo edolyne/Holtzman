@@ -7,7 +7,6 @@ import Validate from "../../../../util/validate";
 import Back from "../Back";
 
 export default class Layout extends Component {
-
   static propTypes = {
     submit: PropTypes.func.isRequired,
     person: PropTypes.object,
@@ -16,9 +15,9 @@ export default class Layout extends Component {
     days: PropTypes.array.isRequired,
     years: PropTypes.array.isRequired,
     campuses: PropTypes.array,
-  }
+  };
 
-  submit = (e) => {
+  submit = e => {
     e.preventDefault();
 
     const data = {};
@@ -38,7 +37,7 @@ export default class Layout extends Component {
     }
 
     this.props.submit(data);
-  }
+  };
 
   render() {
     const { person, months, saveMonth, days, years, campuses } = this.props;
@@ -112,7 +111,6 @@ export default class Layout extends Component {
               />
             </div>
           </div>
-
 
           <h6 className="soft-bottom">Contact</h6>
           <Forms.Input

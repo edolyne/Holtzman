@@ -5,11 +5,10 @@ import content from "../../util/content";
 import time from "../../util/time";
 
 export default class SeriesVideoListItem extends Component {
-
   static propTypes = {
     sermon: PropTypes.object.isRequired,
     order: PropTypes.number.isRequired,
-  }
+  };
 
   dynamicWidth = () => {
     if (typeof window !== "undefined" || window !== null) {
@@ -21,10 +20,8 @@ export default class SeriesVideoListItem extends Component {
       };
     }
 
-    return {
-
-    };
-  }
+    return {};
+  };
 
   render() {
     const sermon = this.props.sermon;
@@ -53,10 +50,11 @@ export default class SeriesVideoListItem extends Component {
           <h4>{sermon.title}</h4>
           <i className="soft-half-right icon-category-video" />
           <h7>{content.speakers(sermon)}</h7>
-          <h7 className="push-half-top float-right text-right">{time.relative(sermon)}</h7>
+          <h7 className="push-half-top float-right text-right">
+            {time.relative(sermon)}
+          </h7>
         </div>
       </Link>
     );
   }
-
 }

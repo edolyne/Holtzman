@@ -7,29 +7,23 @@ import Profile from "./profile";
 import Signup from "./signup";
 
 if (process.env.NATIVE) {
-  import Articles from "./articles";
-  import Devotionals from "./devotionals";
-  import Discover from "./discover";
-  import Locations from "./locations";
-  import Music from "./music";
-  import News from "./news";
-  import Event from "./events";
-  import Sections from "./sections";
-  import Series from "./series";
-  import Stories from "./stories";
-  import Studies from "./studies";
-  import Video from "./video";
-  import Welcome from "./welcome";
+  const Articles = require("./articles");
+  const Devotionals = require("./devotionals");
+  const Discover = require("./discover");
+  const Locations = require("./locations");
+  const Music = require("./music");
+  const News = require("./news");
+  const Event = require("./events");
+  const Sections = require("./sections");
+  const Series = require("./series");
+  const Stories = require("./stories");
+  const Studies = require("./studies");
+  const Video = require("./video");
+  const Welcome = require("./welcome");
 }
 
-
 let Routes = [];
-Routes = Routes.concat(
-  Profile,
-  Give,
-  Groups.Routes,
-  Celebrate.Routes
-);
+Routes = Routes.concat(Profile, Give, Groups.Routes, Celebrate.Routes);
 
 if (process.env.NATIVE) {
   Routes = Routes.concat(
@@ -45,14 +39,12 @@ if (process.env.NATIVE) {
     Stories.Routes,
     Studies.Routes,
     Video.Routes,
-    Welcome.Routes,
+    Welcome.Routes
   );
 }
 
 Routes = Routes.concat(Signup.Routes, Util.Routes);
 
-export {
-  Routes,
-};
+export { Routes };
 
 export default Routes;

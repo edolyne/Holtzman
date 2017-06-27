@@ -10,7 +10,6 @@ import Tag from "../../../components/@primitives/UI/tags";
 
 const defaultTags = [];
 class FilterWithoutData extends Component {
-
   static propTypes = {
     router: PropTypes.object.isRequired,
     location: PropTypes.object.isRequired,
@@ -20,11 +19,11 @@ class FilterWithoutData extends Component {
     showTags: PropTypes.bool.isRequired,
     q: PropTypes.string,
     campusLocations: PropTypes.object,
-  }
+  };
 
-  state = { query: null }
+  state = { query: null };
 
-  findByQuery = (e) => {
+  findByQuery = e => {
     if (e && e.preventDefault) e.preventDefault();
     document.getElementById("search").blur();
 
@@ -37,9 +36,9 @@ class FilterWithoutData extends Component {
     // reset state
     this.setState({ query: null });
     router.push(location);
-  }
+  };
 
-  removeQuery = (e) => {
+  removeQuery = e => {
     if (e && e.preventDefault) e.preventDefault();
 
     this.props.toggleSearch();
@@ -50,23 +49,27 @@ class FilterWithoutData extends Component {
     // reset state
     this.setState({ query: null });
     router.push(location);
-  }
+  };
 
-  inputOnChange = (value) => {
+  inputOnChange = value => {
     this.setState({ query: value });
-  }
+  };
 
   render() {
-    const {
-      attributes,
-      campusLocations,
-      showSearch,
-      showTags,
-      q,
-    } = this.props;
+    const { attributes, campusLocations, showSearch, showTags, q } = this.props;
     const tags = attributes.tags ? attributes.tags : defaultTags;
-    const campuses = campusLocations.campuses ? campusLocations.campuses : defaultTags;
-    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const campuses = campusLocations.campuses
+      ? campusLocations.campuses
+      : defaultTags;
+    const daysOfWeek = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
     return (
       <div>
 
@@ -89,7 +92,9 @@ class FilterWithoutData extends Component {
                   Day of Week
                 </h4>
                 <div className="two-thirds@anchored display-inline-block soft-ends@anchored">
-                  {daysOfWeek.map((day, key) => <Tag key={key} val={day} urlKey="schedules" />)}
+                  {daysOfWeek.map((day, key) =>
+                    <Tag key={key} val={day} urlKey="schedules" />,
+                  )}
                 </div>
               </div>
               <div className="outlined--light outlined--bottom soft-half-sides soft-ends soft-double-bottom@anchored text-center background--light-primary">
@@ -97,9 +102,9 @@ class FilterWithoutData extends Component {
                   Campuses
                 </h4>
                 <div className="two-thirds@anchored display-inline-block soft-ends@anchored">
-                  {campuses.map((campus, key) => (
-                    <Tag key={key} val={campus.name} urlKey="campuses" />
-                  ))}
+                  {campuses.map((campus, key) =>
+                    <Tag key={key} val={campus.name} urlKey="campuses" />,
+                  )}
                 </div>
               </div>
             </div>
@@ -118,7 +123,7 @@ class FilterWithoutData extends Component {
 
               <Forms.Form
                 classes={["hard", "display-inline-block", "one-whole"]}
-                submit={(e) => this.findByQuery(e)}
+                submit={e => this.findByQuery(e)}
                 action
               >
                 <i className="icon-search locked-left soft-half-left" />
@@ -131,7 +136,9 @@ class FilterWithoutData extends Component {
                   }}
                   onClick={this.removeQuery}
                   className="h7 locked-right flush-bottom"
-                >Cancel</span>
+                >
+                  Cancel
+                </span>
                 <Forms.Input
                   id="search"
                   name="search"
@@ -142,12 +149,16 @@ class FilterWithoutData extends Component {
                   placeholder="Type your search here..."
                   type="text"
                   defaultValue={q}
-                  onChange={(e) => this.inputOnChange(e)}
+                  onChange={e => this.inputOnChange(e)}
                   autoFocus
                 />
 
                 <div className="one-whole text-left">
-                  <h6><em>Find a group by zipcode, name, campus, or description</em></h6>
+                  <h6>
+                    <em>
+                      Find a group by zipcode, name, campus, or description
+                    </em>
+                  </h6>
                 </div>
               </Forms.Form>
 
@@ -157,7 +168,6 @@ class FilterWithoutData extends Component {
       </div>
     );
   }
-
 }
 
 const ATTRIBUTES_QUERY = gql`
@@ -180,18 +190,18 @@ const CAMPUS_LOCATIONS_QUERY = gql`
     }
   }
 `;
-const withCampusLocations = graphql(CAMPUS_LOCATIONS_QUERY, { name: "campusLocations" });
+const withCampusLocations = graphql(CAMPUS_LOCATIONS_QUERY, {
+  name: "campusLocations",
+});
 
 export default withRouter(
   withAttributes(
     withCampusLocations(
-      connect((state) => ({ location: state.routing.location }))(
-        FilterWithoutData
-      )
-    )
-  )
+      connect(state => ({ location: state.routing.location }))(
+        FilterWithoutData,
+      ),
+    ),
+  ),
 );
 
-export {
-  FilterWithoutData,
-};
+export { FilterWithoutData };

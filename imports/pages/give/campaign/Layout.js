@@ -15,7 +15,7 @@ type ILayout = {
   account: Object,
 };
 
-const Layout = ({ account }: ILayout) => (
+const Layout = ({ account }: ILayout) =>
   <div>
     <Split nav classes={["background--light-primary"]}>
       <Meta
@@ -52,7 +52,7 @@ const Layout = ({ account }: ILayout) => (
         to="/give/now"
         className={
           "locked-top locked-left soft-double@lap-and-up soft " +
-            "h7 text-dark-secondary plain visuallyhidden@handheld"
+          "h7 text-dark-secondary plain visuallyhidden@handheld"
         }
       >
         <i
@@ -83,7 +83,6 @@ const Layout = ({ account }: ILayout) => (
       </div>
 
     </Left>
-  </div>
-);
+  </div>;
 
 export default Layout;

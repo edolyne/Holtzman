@@ -15,7 +15,6 @@ import {
 import withProfileUpload from "../profile-photo";
 
 class HomeWithoutData extends Component {
-
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
     data: PropTypes.shape({
@@ -23,9 +22,9 @@ class HomeWithoutData extends Component {
     }),
     upload: PropTypes.func,
     photo: PropTypes.string,
-  }
+  };
 
-  state = { content: 0, photo: null }
+  state = { content: 0, photo: null };
 
   componentDidMount() {
     if (process.env.NATIVE) {
@@ -36,16 +35,18 @@ class HomeWithoutData extends Component {
     this.props.dispatch(navActions.setLevel("TOP"));
   }
 
-  onToggle = (content) => this.setState({ content })
-  getContent = () => this.content[this.state.content]
+  onToggle = content => this.setState({ content });
+  getContent = () => this.content[this.state.content];
 
-  content = [<Likes />, <Following />]
+  content = [<Likes />, <Following />];
 
   render() {
     const { upload } = this.props;
 
     let person = {};
-    if (this.props.data && this.props.data.person) person = this.props.data.person;
+    if (this.props.data && this.props.data.person) {
+      person = this.props.data.person;
+    }
 
     // if (this.props.data.loading) return <Loading /> // XXX
     let { photo } = person;
@@ -78,21 +79,17 @@ const GET_PERSON_QUERY = gql`
   }
 `;
 
-const withPerson = graphql(GET_PERSON_QUERY, {
-  // XXX authorized is still not returning well enough
-  // skip: (ownProps) => !Meteor.userId()  !ownProps.authorized,
-});
-const mapStateToProps = (state) => ({ authorized: state.accounts.authorized });
+const withPerson = graphql(
+  GET_PERSON_QUERY,
+  {
+    // XXX authorized is still not returning well enough
+    // skip: (ownProps) => !Meteor.userId()  !ownProps.authorized,
+  },
+);
+const mapStateToProps = state => ({ authorized: state.accounts.authorized });
 
 export default withPerson(
-  withProfileUpload(
-    connect(mapStateToProps)(
-      HomeWithoutData
-    )
-  )
+  withProfileUpload(connect(mapStateToProps)(HomeWithoutData)),
 );
 
-export {
-  HomeWithoutData,
-  GET_PERSON_QUERY,
-};
+export { HomeWithoutData, GET_PERSON_QUERY };

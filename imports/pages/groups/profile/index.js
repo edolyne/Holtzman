@@ -8,7 +8,7 @@ import { Meteor } from "meteor/meteor";
 import OnBoard from "../../../components/people/accounts";
 import Split, {
   Left,
-  Right
+  Right,
 } from "../../../components/@primitives/layout/split";
 
 import GoogleMap from "../../../components/@primitives/map";
@@ -41,15 +41,15 @@ export const phonePropsReducer = ({ phoneNumbers }) => ({
     phoneNumbers.loading ||
     !phoneNumbers.currentPerson.phoneNumbers.length
     ? null
-    : phoneNumbers.currentPerson.phoneNumbers
+    : phoneNumbers.currentPerson.phoneNumbers,
 });
 
 export const JoinWithPhones = graphql(PHONE_QUERY, {
   name: "phoneNumbers",
   props: phonePropsReducer,
   options: {
-    forceFetch: true
-  }
+    forceFetch: true,
+  },
 })(Join);
 
 export const PHONE_NUMBER_MUTATION = gql`
@@ -74,10 +74,10 @@ const withAddPhoneNumber = graphql(PHONE_NUMBER_MUTATION, {
             if (!success || error) return prev;
             prev.currentPerson.phoneNumbers.push({ rawNumber: phoneNumber });
             return prev;
-          }
-        }
-      })
-  })
+          },
+        },
+      }),
+  }),
 });
 
 export const GROUP_MUTATION = gql`
@@ -94,9 +94,9 @@ const withGroupMutation = graphql(GROUP_MUTATION, {
   props: ({ mutate }) => ({
     addToGroup: (groupId, message, communicationPreference) =>
       mutate({
-        variables: { groupId, message, communicationPreference }
-      })
-  })
+        variables: { groupId, message, communicationPreference },
+      }),
+  }),
 });
 
 const defaultArray = [];
@@ -117,12 +117,12 @@ class TemplateWithoutData extends Component {
     dispatch: PropTypes.func.isRequired,
     data: PropTypes.object.isRequired,
     addPhone: PropTypes.function.isRequired,
-    addToGroup: PropTypes.function.isRequired
+    addToGroup: PropTypes.function.isRequired,
   };
 
   state = {
     phoneNumber: "",
-    communicationPreference: "No Preference"
+    communicationPreference: "No Preference",
   };
 
   componentWillMount() {
@@ -183,7 +183,7 @@ class TemplateWithoutData extends Component {
       .addToGroup(
         this.props.data.group.entityId,
         message,
-        this.state.communicationPreference
+        this.state.communicationPreference,
       )
       .then(response => {
         callback(null, response);
@@ -202,8 +202,8 @@ class TemplateWithoutData extends Component {
           onClick: this.sendRequest,
           onChange: this.onPhoneNumberChange,
           validatePhoneNumber: this.validatePhoneNumber,
-          onCommunicationPreferenceChange: this.onCommunicationPreferenceChange
-        })
+          onCommunicationPreferenceChange: this.onCommunicationPreferenceChange,
+        }),
       );
     };
 
@@ -212,8 +212,8 @@ class TemplateWithoutData extends Component {
     this.props.dispatch(
       modal.render(OnBoard, {
         onFinished: joinModal,
-        coverHeader: true
-      })
+        coverHeader: true,
+      }),
     );
 
     return null;
@@ -321,8 +321,8 @@ const GROUP_QUERY = gql`
 
 const withGroup = graphql(GROUP_QUERY, {
   options: ownProps => ({
-    variables: { id: ownProps.params.id }
-  })
+    variables: { id: ownProps.params.id },
+  }),
 });
 
 export default connect()(
@@ -331,12 +331,12 @@ export default connect()(
       ReactMixin.decorate(Shareable)(
         withGroupMutation(
           withAddPhoneNumber(
-            ReactMixin.decorate(Headerable)(TemplateWithoutData)
-          )
-        )
-      )
-    )
-  )
+            ReactMixin.decorate(Headerable)(TemplateWithoutData),
+          ),
+        ),
+      ),
+    ),
+  ),
 );
 
 export { TemplateWithoutData };

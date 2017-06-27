@@ -3,10 +3,11 @@ import { Link } from "react-router";
 import Slider from "react-slick";
 
 class Template extends Component {
-
   componentWillUnmount() {
     if (typeof NativeStorage === "undefined") return;
-    NativeStorage.setItem("welcomed", true,
+    NativeStorage.setItem(
+      "welcomed",
+      true,
       // success
       () => {},
       // error
@@ -14,15 +15,15 @@ class Template extends Component {
     );
   }
 
-  next = (event) => {
+  next = event => {
     const index = Number(event.target.dataset.index);
     this.refs.welcomeSlider.slickGoTo(index + 1);
-  }
+  };
 
-  skip = (event) => {
+  skip = event => {
     event.preventDefault();
     this.refs.welcomeSlider.slickGoTo(7);
-  }
+  };
 
   render() {
     const containerStyles = {
@@ -120,7 +121,6 @@ class Template extends Component {
       </div>
     );
   }
-
 }
 
 const Routes = [
@@ -134,6 +134,4 @@ export default {
   Routes,
 };
 
-export {
-  Template,
-};
+export { Template };
