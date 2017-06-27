@@ -8,7 +8,7 @@ Meteor.methods({
         $pull: { "topics": topic }
       });
     }
-    
+
     return Meteor.users.update(this.userId, {
       $push: { "topics": topic }
     });
