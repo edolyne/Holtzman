@@ -29,11 +29,14 @@ function backgroundImage(contentItem, { label = "1:1" } = {}) {
   }
 
   if (bgImage) {
-    if (bgImage.url) bgImage = bgImage.url;
-    else if (bgImage.cloudfront && bgImage.cloudfront !== "false") {
+    if (bgImage.url) {
+      bgImage = bgImage.url;
+    } else if (bgImage.cloudfront && bgImage.cloudfront !== "false") {
       // for backwards compatability
-      { bgImage = bgImage.cloudfront;
-}    else if (bgImage.s3) bgImage = bgImage.s3;
+      bgImage = bgImage.cloudfront;
+    } else if (bgImage.s3) {
+      bgImage = bgImage.s3;
+    }
   } else {
     bgImage = "";
   }

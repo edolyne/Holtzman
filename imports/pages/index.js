@@ -5,21 +5,34 @@ import Groups from "./groups";
 import Celebrate from "./celebrate";
 import Profile from "./profile";
 import Signup from "./signup";
+let Articles,
+  Devotionals,
+  Discover,
+  Locations,
+  Music,
+  News,
+  Event,
+  Sections,
+  Series,
+  Stories,
+  Studies,
+  Video,
+  Welcome;
 
 if (process.env.NATIVE) {
-  const Articles = require("./articles");
-  const Devotionals = require("./devotionals");
-  const Discover = require("./discover");
-  const Locations = require("./locations");
-  const Music = require("./music");
-  const News = require("./news");
-  const Event = require("./events");
-  const Sections = require("./sections");
-  const Series = require("./series");
-  const Stories = require("./stories");
-  const Studies = require("./studies");
-  const Video = require("./video");
-  const Welcome = require("./welcome");
+  Articles = require("./articles");
+  Devotionals = require("./devotionals");
+  Discover = require("./discover");
+  Locations = require("./locations");
+  Music = require("./music");
+  News = require("./news");
+  Event = require("./events");
+  Sections = require("./sections");
+  Series = require("./series");
+  Stories = require("./stories");
+  Studies = require("./studies");
+  Video = require("./video");
+  Welcome = require("./welcome");
 }
 
 let Routes = [];

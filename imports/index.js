@@ -11,11 +11,13 @@ import Routes from "./routes";
 import Global from "./components/@primitives/layout/global";
 
 let App = null;
+let scriptLoader;
+let AudioPlayer;
 
 if (process.env.NATIVE) {
   /* eslint-disable */
-  const scriptLoader = require("react-async-script-loader");
-  const AudioPlayer = require("./components/@primitives/players/audio");
+  scriptLoader = require("react-async-script-loader");
+  AudioPlayer = require("./components/@primitives/players/audio");
   /* eslint-enable */
 
   // sync load ooyala scripts
@@ -30,6 +32,8 @@ if (process.env.NATIVE) {
       "//player.ooyala.com/static/v4/stable/4.6.9/video-plugin/bit_wrapper.min.js",
     );
   }
+  console.log("scriptLoader = ", scriptLoader);
+  console.log("scripts = ", scripts);
   @scriptLoader(...scripts)
   @connect(state => ({
     audio: state.audio,

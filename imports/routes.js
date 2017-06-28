@@ -1,9 +1,10 @@
 import { Meteor } from "meteor/meteor";
 import ChildrenRoutes from "./pages";
+let Home;
 
 if (process.env.NATIVE) {
   // eslint-disable-next-line
-  const Home = require("./pages/home");
+  Home = require("./pages/home");
 }
 
 const redirectToWelcome = (replace, cb) => {
