@@ -1,4 +1,3 @@
-
 import Future from "fibers/future";
 import { Meteor } from "meteor/meteor";
 // in order to support older app builds, we proxy the old meteor methods
