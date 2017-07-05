@@ -41,18 +41,19 @@ class HomeWithoutData extends Component {
     if (data && data.feed) {
       feedItems = data.feed.slice(0);
     }
-    return feedItems.map((item, i) => (
+    console.log("feedItems = ", feedItems);
+    return feedItems.map((item, i) =>
       <div
         className={
           "grid__item one-half@palm-wide-and-up flush-bottom@palm " +
-            "push-half-bottom@palm-wide push-bottom@portable push-bottom@anchored"
+          "push-half-bottom@palm-wide push-bottom@portable push-bottom@anchored"
         }
         key={i}
       >
         {typeof item === "number" && <FeedItemSkeleton />}
         {typeof item !== "number" && <FeedItem item={item} />}
       </div>
-    ));
+    );
   };
 
   render() {
@@ -62,7 +63,7 @@ class HomeWithoutData extends Component {
           <section
             className={
               "background--light-secondary soft-half@palm " +
-                "soft@palm-wide-and-up soft-double@anchored"
+              "soft@palm-wide-and-up soft-double@anchored"
             }
           >
             <div className="grid">

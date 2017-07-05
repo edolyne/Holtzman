@@ -19,6 +19,7 @@ export const topics = [
   "News",
   "Series",
   "Sermons",
+  "Staff News",
   "Stories",
   "Studies",
 ];
@@ -27,26 +28,25 @@ export const topics = [
 const map = (state) => ({ topics: state.topics.topics });
 // @connect(map)
 export class FollowingContainer extends Component {
-
   propTypes = {
     dispatch: PropTypes.func.isRequired,
     topics: PropTypes.object.isRequired,
     person: PropTypes.object.isRequired,
-  }
+  };
 
-  h7Classes = "flush outlined--light outlined--bottom display-block soft-sides soft-half-top soft-bottom text-center soft-double-sides@lap-and-up soft-double-bottom@lap-and-up"
-  containerClasses = "cell-wrapper push-half-bottom background--light-primary outlined--light outlined--bottom text-dark-secondary"
+  h7Classes = "flush outlined--light outlined--bottom display-block soft-sides soft-half-top soft-bottom text-center soft-double-sides@lap-and-up soft-double-bottom@lap-and-up";
+  containerClasses = "cell-wrapper push-half-bottom background--light-primary outlined--light outlined--bottom text-dark-secondary";
 
   changed = (id) => {
     const topic = topics[id];
     this.props.dispatch(topicActions.toggle({ topic }));
     Meteor.call("toggleTopic", topic);
-  }
+  };
 
   active = (item) => {
     if (this.props.topics) return this.props.topics.indexOf(item) === -1;
     return true;
-  }
+  };
 
   render() {
     return (
@@ -59,7 +59,12 @@ export class FollowingContainer extends Component {
         <div className={this.containerClasses}>
 
           {topics.map((contentItem, i) => {
-            if (contentItem !== "Events" || (this.props.person.authorized && contentItem === "Events")) {
+            if (
+              contentItem !== "Events" ||
+              contentItem !== "Staff News" ||
+              (this.props.person.authorized &&
+                (contentItem === "Events" || contentItem === "Staff News"))
+            ) {
               return (
                 <FollowingItem
                   item={contentItem}
@@ -78,7 +83,6 @@ export class FollowingContainer extends Component {
       </section>
     );
   }
-
 }
 
 export default connect(map)(canSee(["RSR - Beta Testers"])(FollowingContainer));
