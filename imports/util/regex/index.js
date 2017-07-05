@@ -20,7 +20,6 @@ Regex.addRegex = (name, test, validate) => {
     const funcName = `is${capitalize(name)}`;
     Validate.addValidator(funcName, str => test.test(str));
   }
-  return;
 };
 
 /*

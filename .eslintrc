@@ -40,7 +40,7 @@
   ],
   "rules": {
     "arrow-parens": [2, "as-needed"],
-    "quotes": [2, "double"],
+    "quotes": [2, "double", { "avoidEscape": true }],
     "import/extensions": 0,
     "import/no-absolute-path": 0,
     "import/no-unresolved": [2, { "ignore": [

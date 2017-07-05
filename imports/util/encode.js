@@ -3,7 +3,7 @@ const Base64 = {
   _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
   encode(e) {
     let t = "";
-    let n,
+    let n, 
 r,
 i,
 s,

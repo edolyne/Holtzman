@@ -306,6 +306,7 @@ export default function run(routes, serverOptions = {}) {
             }),
           );
         });
+        return null;
       }),
     );
   })();
