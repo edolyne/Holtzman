@@ -107,7 +107,9 @@ function generateSSRData(serverOptions, req, res, renderProps, history) {
           wrapperProps.store = reduxStore;
         }
         app = (
-          <serverOptions.wrapper {...wrapperProps}>{app}</serverOptions.wrapper>
+          <serverOptions.wrapper {...wrapperProps}>
+            {app}
+          </serverOptions.wrapper>
         );
       }
 

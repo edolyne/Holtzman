@@ -1,5 +1,6 @@
 import { Meteor } from "meteor/meteor";
 import ChildrenRoutes from "./pages";
+
 let Home;
 
 if (process.env.NATIVE) {

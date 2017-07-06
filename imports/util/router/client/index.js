@@ -53,7 +53,9 @@ export default function run(routes, clientOptions = {}) {
       }
 
       app = (
-        <clientOptions.wrapper {...wrapperProps}>{app}</clientOptions.wrapper>
+        <clientOptions.wrapper {...wrapperProps}>
+          {app}
+        </clientOptions.wrapper>
       );
     }
 
