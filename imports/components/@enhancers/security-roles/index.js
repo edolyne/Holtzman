@@ -4,7 +4,7 @@ import gql from "graphql-tag";
 
 export const SECURITY_ROLES_QUERY = gql`
   query GetSecurityRoles {
-    currentPerson{
+    currentPerson {
       roles {
         name
         id

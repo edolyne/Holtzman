@@ -107,12 +107,10 @@ export default class Join extends Component {
       case "success":
         return (
           <div className="soft soft-double-ends one-whole text-center">
-            <h4 className="text-center push-ends">
-              Message Sent!
-            </h4>
+            <h4 className="text-center push-ends">Message Sent!</h4>
             <p>
-              We have sent your request for more information
-              about {group.name} to the group leaders!
+              We have sent your request for more information about {group.name}{" "}
+              to the group leaders!
             </p>
             <button
               className="btn--thin btn--small btn--dark-tertiary one-whole"

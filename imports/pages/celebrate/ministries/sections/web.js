@@ -74,7 +74,6 @@ const Web = () =>
       <div className="constrain-page">
         <div className="grid__item one-whole text-dark-primary text-center hard">
           <div className="soft-double-sides@lap-and-up soft-double-top@lap-and-up push-double-top@lap-and-up soft">
-
             <div className="one-whole text-center push-bottom push-double-top@handheld">
               <h1 className="uppercase">Web Stats</h1>
             </div>
@@ -95,7 +94,9 @@ const Web = () =>
                     {statistic.value}
                   </h1>
                 </FitText>
-                <h3>{statistic.label}</h3>
+                <h3>
+                  {statistic.label}
+                </h3>
               </div>,
             )}
           </div>

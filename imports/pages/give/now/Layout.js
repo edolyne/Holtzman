@@ -19,7 +19,6 @@ const Layout = ({ alive, accounts }) =>
       className="soft-double-sides@lap-and-up soft-ends@anchored soft background--light-primary"
       style={{ overflow: "visible" }}
     >
-
       <div className="text-left soft-top@anchored hard-left@lap-and-up soft-half-bottom soft@anchored ">
         <div className="soft-double-ends@palm-wide-and-up soft-ends@palm">
           {!alive && <Offline />}
@@ -36,12 +35,10 @@ const Layout = ({ alive, accounts }) =>
     </div>
 
     <div className="soft-half soft-sides@portable soft-double-sides@anchored">
-
       <h4 className="soft soft-double-ends text-center@lap-and-up flush-bottom">
         Learn more about our campaigns...
       </h4>
       <div className="grid">
-
         {accounts.loading &&
           <div className="one-whole text-center soft-ends">
             <Spinner styles={{ width: "40px", height: "40px" }} />
@@ -70,7 +67,9 @@ const Layout = ({ alive, accounts }) =>
                           {account.name}
                         </h4>
                         <p className="text-dark-primary">
-                          <small>{account.summary}</small>
+                          <small>
+                            {account.summary}
+                          </small>
                         </p>
                         <div
                           className="display-inline-block"
@@ -98,7 +97,11 @@ const Layout = ({ alive, accounts }) =>
                         <h4 className="push-half-top@portable push-top@anchored">
                           {account.name}
                         </h4>
-                        <p><small>{account.summary}</small></p>
+                        <p>
+                          <small>
+                            {account.summary}
+                          </small>
+                        </p>
                         <Link
                           to={`/give/campaign/${encodeURI(account.name)}`}
                           className="h6 btn--small btn--dark-tertiary soft-sides@portable one-whole@handheld"
@@ -111,13 +114,10 @@ const Layout = ({ alive, accounts }) =>
 
                   return null;
                 })()}
-
               </SideBySide>
             </div>,
           )}
-
       </div>
-
     </div>
   </div>;
 

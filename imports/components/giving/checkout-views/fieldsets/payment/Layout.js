@@ -17,11 +17,7 @@ type IHeader = {
 
 const Header = ({ override }: IHeader) => {
   if (override) return override;
-  return (
-    <h4 className="text-center">
-      Payment Details
-    </h4>
-  );
+  return <h4 className="text-center">Payment Details</h4>;
 };
 
 type INextButton = {
@@ -152,9 +148,7 @@ const Layout = ({
       </a>
 
       <NextButton payment={payment} next={next} />
-
     </div>
-
   </div>;
 
 export default Layout;

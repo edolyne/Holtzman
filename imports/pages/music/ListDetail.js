@@ -99,8 +99,12 @@ class ListDetailWithoutData extends Component {
                 {this.props.album.content.tracks[this.props.trackNumber].title}
               </h5>
               <h7 className="text-light-tertiary">
-                <span>{this.props.album.title} – </span>
-                <span>{this.props.album.artist || "NewSpring"}</span>
+                <span>
+                  {this.props.album.title} –{" "}
+                </span>
+                <span>
+                  {this.props.album.artist || "NewSpring"}
+                </span>
               </h7>
             </div>
           </div>
@@ -111,7 +115,9 @@ class ListDetailWithoutData extends Component {
           >
             <h5>View Album</h5>
           </Link>
-          <h5 onClick={this.share} className="push-ends">Share</h5>
+          <h5 onClick={this.share} className="push-ends">
+            Share
+          </h5>
         </div>
       </div>
     );

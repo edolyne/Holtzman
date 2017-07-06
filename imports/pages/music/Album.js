@@ -135,8 +135,12 @@ class MusicAlbumWithoutData extends Component {
               "two-thirds text-light-primary"
             }
           >
-            <h5>{album.title}</h5>
-            <h7>{this.props.albumArtist || "NewSpring"}</h7>
+            <h5>
+              {album.title}
+            </h5>
+            <h7>
+              {this.props.albumArtist || "NewSpring"}
+            </h7>
           </div>
         </div>
         <div className="background--light-primary one-whole">

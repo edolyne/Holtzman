@@ -14,7 +14,6 @@ const Loading = ({ account }: { account: boolean }) =>
 
           return <h4 className="text-light-primary">Creating your account</h4>;
         })()}
-
       </div>
     </div>
   </WindowLoading>;

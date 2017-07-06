@@ -148,7 +148,9 @@ const withCampuses = graphql(CAMPUSES_QUERY, { name: "campuses" });
 const PERSON_QUERY = gql`
   query GetPersonForSettings($cache: Boolean) {
     person: currentPerson(cache: $cache) {
-      campus(cache: $cache) { id: entityId }
+      campus(cache: $cache) {
+        id: entityId
+      }
       firstName
       lastName
       nickName

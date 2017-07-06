@@ -45,7 +45,9 @@ const RenderRecentLikes = ({ recentLikes, recentLoading, show }) => {
           <h5 className="flush soft-bottom">Recently Liked By Others</h5>
         </div>}
       {recentLoading &&
-        <div className="text-center" data-spec="loading"><Loading /></div>}
+        <div className="text-center" data-spec="loading">
+          <Loading />
+        </div>}
       {recentLikes && <RecentLikes likes={recentLikes} />}
     </section>
   );
@@ -62,7 +64,6 @@ const Layout = ({ featuredItems, textItems, recentLikes, recentLoading }) =>
     style={{ overflowY: "hidden", height: "100%" }}
     className="background--light-primary"
   >
-
     <section className="hard background--light-secondary">
       <h6 className="push-left hard-bottom soft-top">
         Recommended by NewSpring
@@ -112,16 +113,16 @@ const Layout = ({ featuredItems, textItems, recentLikes, recentLoading }) =>
 
                     return (
                       <span key={i}>
-                        <Link to={x.meta.urlTitle}>{x.title}</Link>
+                        <Link to={x.meta.urlTitle}>
+                          {x.title}
+                        </Link>
                         {delimeter}
                       </span>
                     );
                   })}?
                 </em>
               </small>
-
             </p>
-
           </div>
         </div>
       </div>}

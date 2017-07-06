@@ -32,7 +32,11 @@ type IAdditionalMessage = {
 
 const AdditionalMessage = ({ additionalMessage }: IAdditionalMessage) => {
   if (!additionalMessage) return null;
-  return <h5>{additionalMessage}</h5>;
+  return (
+    <h5>
+      {additionalMessage}
+    </h5>
+  );
 };
 
 const ContactLink = () =>
@@ -61,7 +65,9 @@ const Err = ({ msg, goToStepOne, additionalMessage }: IErr) =>
   <div className="soft soft-double-ends push-double-top@anchored one-whole text-center">
     <div className="push-double-top">
       <Error />
-      <h3 className="text-alert push-ends">{ERROR_HEADING}</h3>
+      <h3 className="text-alert push-ends">
+        {ERROR_HEADING}
+      </h3>
       <p className="text-left">
         {msg}
       </p>

@@ -76,7 +76,7 @@ class TemplateWithoutData extends Component {
 }
 
 const SERIES_QUERY = gql`
-  query getSeries($limit: Int!, $skip: Int!){
+  query getSeries($limit: Int!, $skip: Int!) {
     content(channel: "series_newspring", limit: $limit, skip: $skip) {
       id
       entryId: id
@@ -116,8 +116,8 @@ const withSeries = graphql(SERIES_QUERY, {
     loading: data.loading,
     done:
       data.content &&
-        !data.loading &&
-        data.content.length < data.variables.limit + data.variables.skip,
+      !data.loading &&
+      data.content.length < data.variables.limit + data.variables.skip,
     fetchMore: () =>
       data.fetchMore({
         variables: { ...data.variables, skip: data.content.length },

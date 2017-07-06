@@ -52,9 +52,10 @@ class TemplateWithoutData extends Component {
     const { limit, start, end } = this.props.currentVariables;
 
     // XXX default shows all transactions, but we only want to print YTD
-    const vars = limit && !start && !end
-      ? { ...this.props.currentVariables, start: moment().startOf("year") }
-      : this.props.currentVariables;
+    const vars =
+      limit && !start && !end
+        ? { ...this.props.currentVariables, start: moment().startOf("year") }
+        : this.props.currentVariables;
 
     this.setState({ printLoading: true });
     this.props
@@ -103,7 +104,12 @@ class TemplateWithoutData extends Component {
 const FILTER_QUERY = gql`
   query GetFilterContent {
     family: currentFamily {
-      person { nickName, firstName, lastName, id: entityId }
+      person {
+        nickName
+        firstName
+        lastName
+        id: entityId
+      }
     }
   }
 `;
@@ -111,14 +117,20 @@ const FILTER_QUERY = gql`
 const withFilter = graphql(FILTER_QUERY, { name: "filter" });
 
 const GET_STATEMENT = gql`
-  mutation GetGivingStatement($limit: Int, $skip: Int, $people: [Int], $start: String, $end: String) {
+  mutation GetGivingStatement(
+    $limit: Int
+    $skip: Int
+    $people: [Int]
+    $start: String
+    $end: String
+  ) {
     transactionStatement(
-      limit: $limit,
-      skip: $skip,
-      people: $people,
-      start: $start,
+      limit: $limit
+      skip: $skip
+      people: $people
+      start: $start
       end: $end
-    ){
+    ) {
       file
     }
   }
@@ -129,24 +141,37 @@ const withStatement = graphql(GET_STATEMENT, {
 });
 
 const TRANSACTIONS_QUERY = gql`
-  query GetTransactions($limit: Int, $skip: Int, $people: [Int], $start: String, $end: String) {
+  query GetTransactions(
+    $limit: Int
+    $skip: Int
+    $people: [Int]
+    $start: String
+    $end: String
+  ) {
     transactions(
-      limit: $limit,
-      skip: $skip,
-      people: $people,
-      start: $start,
-      end: $end,
+      limit: $limit
+      skip: $skip
+      people: $people
+      start: $start
+      end: $end
       cache: false
     ) {
       id
       date
       status
       summary
-      person { firstName, lastName, photo }
+      person {
+        firstName
+        lastName
+        photo
+      }
       details {
         id
         amount
-        account { id, name }
+        account {
+          id
+          name
+        }
       }
     }
   }
@@ -173,10 +198,9 @@ const withTransactions = graphql(TRANSACTIONS_QUERY, {
     loading: data.loading,
     done:
       data.variables.limit === 0 ||
-        (data.transactions &&
-          !data.loading &&
-          data.transactions.length <
-            data.variables.limit + data.variables.skip),
+      (data.transactions &&
+        !data.loading &&
+        data.transactions.length < data.variables.limit + data.variables.skip),
     fetchMore: () =>
       data.fetchMore({
         variables: { ...data.variables, skip: data.transactions.length },

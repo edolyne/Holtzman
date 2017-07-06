@@ -97,7 +97,6 @@ export default class SeriesHero extends Component {
                 />
               );
             })()}
-
           </div>
         </div>
         {(() => {

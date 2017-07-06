@@ -138,7 +138,8 @@ class TagWithoutData extends Component {
         }
         onClick={this.onClick}
       >
-        {label || val}{this.props.icon ? this.props.icon : ""}
+        {label || val}
+        {this.props.icon ? this.props.icon : ""}
         {this.props.iconClass || active
           ? <span
               style={{ fontSize: "10px" }}

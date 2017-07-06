@@ -25,7 +25,7 @@ export const ACTIVITY_QUERY = gql`
         description
       }
     }
-    savedPayments(cache: false){
+    savedPayments(cache: false) {
       id: entityId
       name
       payment {

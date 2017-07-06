@@ -105,7 +105,6 @@ export default class Checkbox extends React.Component {
 
     return (
       <div className={inputclasses.join(" ")} data-spec="input-wrapper">
-
         <label
           className="h6 soft-half-left push-half-left flush-bottom text-left float-left locked-top"
           style={{ marginTop: "-1px", cursor: "pointer" }}

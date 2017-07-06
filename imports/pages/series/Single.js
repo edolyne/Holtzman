@@ -100,8 +100,12 @@ class SeriesSingleWithoutData extends Component {
             className={collections.classes(series)}
             style={this.hackBackgroundStyles()}
           />
-          <style>{styles.overlay(series)}</style>
-          <style>{collections.backgroundStyles(series)}</style>
+          <style>
+            {styles.overlay(series)}
+          </style>
+          <style>
+            {collections.backgroundStyles(series)}
+          </style>
           <SeriesHero series={series} />
           <section
             className={`${series.content.isLight

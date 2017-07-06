@@ -37,11 +37,12 @@ const PHONE_QUERY = gql`
 
 export const phonePropsReducer = ({ phoneNumbers }) => ({
   phonesLoading: phoneNumbers ? phoneNumbers.loading : true,
-  phones: !phoneNumbers ||
+  phones:
+    !phoneNumbers ||
     phoneNumbers.loading ||
     !phoneNumbers.currentPerson.phoneNumbers.length
-    ? null
-    : phoneNumbers.currentPerson.phoneNumbers,
+      ? null
+      : phoneNumbers.currentPerson.phoneNumbers,
 });
 
 export const JoinWithPhones = graphql(PHONE_QUERY, {
@@ -81,8 +82,16 @@ const withAddPhoneNumber = graphql(PHONE_NUMBER_MUTATION, {
 });
 
 export const GROUP_MUTATION = gql`
-  mutation AddToGroup($groupId: ID!, $message: String!, $communicationPreference: String!) {
-    requestGroupInfo(groupId: $groupId, message: $message, communicationPreference: $communicationPreference) {
+  mutation AddToGroup(
+    $groupId: ID!
+    $message: String!
+    $communicationPreference: String!
+  ) {
+    requestGroupInfo(
+      groupId: $groupId
+      message: $message
+      communicationPreference: $communicationPreference
+    ) {
       error
       success
       code
@@ -305,13 +314,33 @@ const GROUP_QUERY = gql`
         photo
         kidFriendly
         ageRange
-        campus { name }
-        tags { id, value }
-        locations { location { city, state, latitude, longitude } }
-        schedule { description }
+        campus {
+          name
+        }
+        tags {
+          id
+          value
+        }
+        locations {
+          location {
+            city
+            state
+            latitude
+            longitude
+          }
+        }
+        schedule {
+          description
+        }
         members {
           role
-          person { id, photo, firstName, nickName, lastName }
+          person {
+            id
+            photo
+            firstName
+            nickName
+            lastName
+          }
         }
         groupType
       }

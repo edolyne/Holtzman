@@ -32,9 +32,7 @@ const NewSpringAverages = () =>
   <div className="background--light-secondary text-dark-primary soft-double-ends push-ends@lap-and-up soft-ends text-center">
     <div className="constrain-page push-top soft-sides@handheld">
       <div className="one-whole">
-        <h3 className="push-half-bottom">
-          Average Weekly Attendance
-        </h3>
+        <h3 className="push-half-bottom">Average Weekly Attendance</h3>
 
         <FitText compressor={0.6} maxFontSize="100">
           <h1

@@ -97,7 +97,6 @@ const Layout = ({
         iconClass={showTags ? "icon-arrow-up" : "icon-arrow-down"}
         data-spec="iconTag"
       />
-
     </div>
 
     {/* Filter */}
@@ -176,9 +175,7 @@ const Layout = ({
                   <em>
                     <small>
                       Unfortunately, we didn't find any groups matching your
-                      search. You can start a
-                      group
-                      {" "}
+                      search. You can start a group{" "}
                       <a href="https://rock.newspring.cc/workflows/81">here!</a>
                     </small>
                   </em>
@@ -216,7 +213,6 @@ const Layout = ({
           </div>
         </div>
       </button>
-
     </div>
   </section>;
 

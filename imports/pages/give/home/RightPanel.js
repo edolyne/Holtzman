@@ -37,9 +37,7 @@ export const RightPanel = ({ loading, data, changeYear }: IRightPanel) =>
       <div className="display-inline-block">
         <p className="text-light-primary display-inline-block soft-half-right">
           <small>
-            <em>
-              See your summary from
-            </em>
+            <em>See your summary from</em>
           </small>
         </p>
         <style>

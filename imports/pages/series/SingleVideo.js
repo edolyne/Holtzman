@@ -112,9 +112,15 @@ class SeriesSingleVideoWithoutData extends Component {
             />
           </div>}
         <div className="soft soft-double@palm-wide-and-up push-top">
-          <h2 className="push-half-bottom">{currentSermon.title}</h2>
-          <h4>{contentHelpers.speakers(currentSermon)}</h4>
-          <h6 className="text-dark-tertiary">{time.date(currentSermon)}</h6>
+          <h2 className="push-half-bottom">
+            {currentSermon.title}
+          </h2>
+          <h4>
+            {contentHelpers.speakers(currentSermon)}
+          </h4>
+          <h6 className="text-dark-tertiary">
+            {time.date(currentSermon)}
+          </h6>
           <div
             dangerouslySetInnerHTML={react.markup(currentSermon, "description")}
           />

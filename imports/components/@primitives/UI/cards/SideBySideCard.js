@@ -177,7 +177,6 @@ export default class Card extends Component {
           <div className={itemTheme || this.itemClasses()} style={itemStyles}>
             {this.props.children}
           </div>
-
         </div>
       );
     }
@@ -193,7 +192,6 @@ export default class Card extends Component {
         <div className={itemTheme || this.itemClasses()} style={itemStyles}>
           {this.props.children}
         </div>
-
       </div>
     );
   }

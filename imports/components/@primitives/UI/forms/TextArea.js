@@ -235,7 +235,6 @@ export default class TextArea extends Component {
         />
 
         {this.renderHelpText()}
-
       </div>
     );
   }

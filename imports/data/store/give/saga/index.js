@@ -91,10 +91,17 @@ function* recoverTransactions() {
         next
         gateway
         date
-        schedule { value, description }
+        schedule {
+          value
+          description
+        }
         details {
           amount
-          account { name, id, description }
+          account {
+            name
+            id
+            description
+          }
         }
       }
     }

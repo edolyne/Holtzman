@@ -45,11 +45,17 @@ export default class SeriesVideoListItem extends Component {
               borderRadius: "6px 0 6px 0",
             }}
           >
-            <h5 className="floating__item flush">{order + 1}</h5>
+            <h5 className="floating__item flush">
+              {order + 1}
+            </h5>
           </div>
-          <h4>{sermon.title}</h4>
+          <h4>
+            {sermon.title}
+          </h4>
           <i className="soft-half-right icon-category-video" />
-          <h7>{content.speakers(sermon)}</h7>
+          <h7>
+            {content.speakers(sermon)}
+          </h7>
           <h7 className="push-half-top float-right text-right">
             {time.relative(sermon)}
           </h7>

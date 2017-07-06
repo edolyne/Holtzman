@@ -121,9 +121,7 @@ class ForgotPassword extends React.Component {
             classes={["push-double-top"]}
             submit={this.submit}
           >
-            <legend className="push-half-bottom">
-              Reset Password
-            </legend>
+            <legend className="push-half-bottom">Reset Password</legend>
             <h6 className="push-double-bottom">
               confirm your email to send the reset link
             </h6>
@@ -160,7 +158,6 @@ class ForgotPassword extends React.Component {
                   </button>
                 );
               })()}
-
             </div>
           </Forms.Form>
         );

@@ -89,9 +89,13 @@ export default class Layout extends Component {
                   return (
                     <div className="text-center">
                       <p className="push-half-bottom">
-                        <em>{this.formatDate(transaction.date)}</em>
+                        <em>
+                          {this.formatDate(transaction.date)}
+                        </em>
                       </p>
-                      <h3 className="text-dark-secondary">{account.name}</h3>
+                      <h3 className="text-dark-secondary">
+                        {account.name}
+                      </h3>
 
                       <Currency
                         amount={transaction.details[0].amount.toFixed(2)}
@@ -109,7 +113,6 @@ export default class Layout extends Component {
                           return (
                             <h4 className="text-dark-secondary">
                               {detail.accountNumber.slice(-4)}&nbsp;
-
                               {(() => {
                                 if (
                                   detail.paymentType &&
@@ -133,7 +136,6 @@ export default class Layout extends Component {
                                 }
                                 return null;
                               })()}
-
                             </h4>
                           );
                         }
@@ -146,10 +148,8 @@ export default class Layout extends Component {
                         }
                       >
                         Thank you for your contribution to NewSpring Church.
-                        Because you are
-                        obedient in giving, we&#39;ll be able to connect more
-                        people to Jesus and
-                        each other.
+                        Because you are obedient in giving, we&#39;ll be able to
+                        connect more people to Jesus and each other.
                       </p>
                     </div>
                   );
@@ -158,14 +158,15 @@ export default class Layout extends Component {
             </div>
           </div>
           <div className="soft-half soft-sides@portable soft-double-sides@anchored">
-
             <h4 className="soft soft-double-ends text-center@lap-and-up flush-bottom">
               Recent Articles About Giving
             </h4>
             {(() => {
               if (loadingEntries) {
                 return (
-                  <div className="one-whole soft text-center"><Spinner /></div>
+                  <div className="one-whole soft text-center">
+                    <Spinner />
+                  </div>
                 );
               }
               return (
@@ -228,14 +229,12 @@ export default class Layout extends Component {
 
                             return null;
                           })()}
-
                         </SideBySide>
                       </div>,
                     )}
                 </div>
               );
             })()}
-
           </div>
         </Left>
       </div>

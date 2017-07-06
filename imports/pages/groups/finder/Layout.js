@@ -50,7 +50,11 @@ const Layout = ({
         </div>
         {(() => {
           if (!tags.length) {
-            return <div className="one-whole text-center"><Loading /></div>;
+            return (
+              <div className="one-whole text-center">
+                <Loading />
+              </div>
+            );
           }
 
           const classes = ["btn", "push-top@lap-and-up"];
@@ -155,7 +159,6 @@ const Layout = ({
                     >
                       Read more
                     </span>
-
                   </SideBySide>
                 </a>
               );

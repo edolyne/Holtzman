@@ -50,7 +50,9 @@ const getLinks = (additionalClasses?: string, subNav: ISubNav) => {
       className={getLinkClasses(additionalClasses, x.isActive)}
       style={getLinkStyles(x.isActive)}
     >
-      <h6>{x.title}</h6>
+      <h6>
+        {x.title}
+      </h6>
     </Link>,
   );
   return links;
@@ -99,7 +101,9 @@ export class Dashboard extends Component {
           {!process.env.NATIVE &&
             title &&
             !hideTitle &&
-            <h1 className="soft-half-bottom@handheld soft-bottom">{title}</h1>}
+            <h1 className="soft-half-bottom@handheld soft-bottom">
+              {title}
+            </h1>}
           <div
             className={`floating ${!process.env.NATIVE
               ? "text-left"

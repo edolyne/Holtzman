@@ -43,7 +43,6 @@ export default ({
       }}
       id="add-to-cart"
     >
-
       <div className="display-inline-block">
         {/* Subund Layout */}
         {subfunds &&
@@ -108,6 +107,5 @@ export default ({
         {/* Checkout Buttons */}
         <CheckoutButtons disabled={!canCheckout} />
       </div>
-
     </Forms.Form>
   </div>;

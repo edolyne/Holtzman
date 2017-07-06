@@ -24,8 +24,13 @@ import Layout from "./Layout";
 export const SAVED_ACCTS_QUERY = gql`
   query GetSavedPaymentAccounts($cache: Boolean) {
     savedPayments(cache: $cache) {
-      name, id: entityId, date,
-      payment { accountNumber, paymentType }
+      name
+      id: entityId
+      date
+      payment {
+        accountNumber
+        paymentType
+      }
     }
   }
 `;

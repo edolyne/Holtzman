@@ -15,11 +15,12 @@ export const RecoverableSchedule = ({
 }: IRecoverableSchedule) =>
   <div>
     <div className="display-inline-block soft-half-ends one-whole">
-      <h5 className="flush-bottom float-left">{account}</h5>
+      <h5 className="flush-bottom float-left">
+        {account}
+      </h5>
     </div>
 
     <div className="grid push-top soft-bottom">
-
       <div className="grid__item one-half">
         <Forms.Input
           label="Amount"
@@ -38,7 +39,6 @@ export const RecoverableSchedule = ({
         />
       </div>
     </div>
-
   </div>;
 
 type IRecover = {
@@ -50,17 +50,13 @@ type IRecover = {
 /* eslint-disable max-len */
 const Recover = ({ schedules, onClick, hide }: IRecover) =>
   <div className="soft soft-double-ends one-whole text-center">
-    <h4 className="text-center push-ends">
-      Transfer Your Schedule
-    </h4>
+    <h4 className="text-center push-ends">Transfer Your Schedule</h4>
     <p className="push-bottom text-left">
       Our records show that you have active giving schedules in our previous
-      system. To access your
-      schedule within our new system, simply review your schedule and re-enter
-      your payment details.
-      If you&#39;re not ready to do this, your schedule will continue in our
-      previous system until
-      you transfer it.
+      system. To access your schedule within our new system, simply review your
+      schedule and re-enter your payment details. If you&#39;re not ready to do
+      this, your schedule will continue in our previous system until you
+      transfer it.
     </p>
 
     {schedules.map(schedule =>
@@ -92,8 +88,8 @@ const Recover = ({ schedules, onClick, hide }: IRecover) =>
       <em>
         <small>
           You can cancel your schedule at any time from the Scheduled Giving
-          page. If you have any
-          questions please call our Finance Team at 864-965-9990 or{" "}
+          page. If you have any questions please call our Finance Team at
+          864-965-9990 or{" "}
           <a
             rel="noopener noreferrer"
             target="_blank"
@@ -105,7 +101,6 @@ const Recover = ({ schedules, onClick, hide }: IRecover) =>
         </small>
       </em>
     </p>
-
   </div>;
 
 export default Recover;

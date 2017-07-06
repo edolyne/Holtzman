@@ -10,7 +10,7 @@ import infiniteScroll from "../../components/@enhancers/infinite-scroll";
 
 import { FeedItemSkeleton } from "../../components/@primitives/UI/loading";
 import ApollosPullToRefresh from "../../components/@enhancers/pull-to-refresh";
-import FeedItem from "../../components/content/feed-item-card";
+import FeedItemCard from "../../components/content/feed-item-card";
 
 import { nav as navActions } from "../../data/store";
 
@@ -49,7 +49,7 @@ class TemplateWithoutData extends Component {
       >
         {(() => {
           if (typeof item === "number") return <FeedItemSkeleton />;
-          return <FeedItem item={item} />;
+          return <FeedItemCard item={item} />;
         })()}
       </div>,
     );
@@ -76,7 +76,7 @@ class TemplateWithoutData extends Component {
 }
 
 const SERIES_QUERY = gql`
-  query getSeries($limit: Int!, $skip: Int!){
+  query getSeries($limit: Int!, $skip: Int!) {
     content(channel: "studies", limit: $limit, skip: $skip) {
       id
       entryId: id
@@ -116,8 +116,8 @@ const withSeries = graphql(SERIES_QUERY, {
     loading: data.loading,
     done:
       data.content &&
-        !data.loading &&
-        data.content.length < data.variables.limit + data.variables.skip,
+      !data.loading &&
+      data.content.length < data.variables.limit + data.variables.skip,
     fetchMore: () =>
       data.fetchMore({
         variables: { ...data.variables, skip: data.content.length },

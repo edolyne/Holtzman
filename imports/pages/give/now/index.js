@@ -41,7 +41,13 @@ const ACCOUNTS_QUERY = gql`
       summary
       image
       order
-      images { fileName, fileType, fileLabel, s3, cloudfront }
+      images {
+        fileName
+        fileType
+        fileLabel
+        s3
+        cloudfront
+      }
     }
   }
 `;

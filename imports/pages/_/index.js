@@ -11,14 +11,12 @@ const Template = props => {
   return (
     <div>
       <Split nav classes={["background--light-primary"]}>
-
         <Right
           mobile={false}
           background={photo}
           backgroundFill={false}
           classes={["background--right", "background--bottom"]}
         />
-
       </Split>
       <Left scroll classes={["background--light-primary"]}>
         {props.children}

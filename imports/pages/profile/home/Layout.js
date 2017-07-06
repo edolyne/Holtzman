@@ -11,7 +11,6 @@ import Tabs from "../../../components/@primitives/UI/tabs";
 const Layout = ({ photo, person, onToggle, content, onUpload }) =>
   <div>
     <Split nav classes={["background--light-primary"]}>
-
       <Meta
         title={person ? `${person.nickName} ${person.lastName}` : "Sign In"}
       />
@@ -62,14 +61,14 @@ const Layout = ({ photo, person, onToggle, content, onUpload }) =>
             if (!person.home || !person.home.city) return null;
             return (
               <p className="text-light-primary flush">
-                <em>{person.home.city}</em>
+                <em>
+                  {person.home.city}
+                </em>
               </p>
             );
           })()}
         </div>
-
       </Right>
-
     </Split>
     <Left scroll>
       <Tabs items={["Likes", "Following"]} toggle={onToggle} />

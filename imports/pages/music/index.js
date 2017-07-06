@@ -118,9 +118,9 @@ const withAlbums = graphql(ALBUMS_QUERY, {
     loading: data.loading,
     done:
       data.content &&
-        // XXX Pagination is currently broken
-        data.loading &&
-        data.content.length < data.variables.limit + data.variables.skip,
+      // XXX Pagination is currently broken
+      data.loading &&
+      data.content.length < data.variables.limit + data.variables.skip,
     fetchMore: () =>
       data.fetchMore({
         variables: { ...data.variables, skip: data.content.length },

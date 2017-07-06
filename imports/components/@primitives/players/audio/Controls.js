@@ -257,7 +257,6 @@ class AudioControlsWithoutData extends Component {
 
     return (
       <div className="floating audio-controls">
-
         <button className="plain floating__item" onClick={this.back}>
           <i className={this.backClasses()} />
         </button>
@@ -276,7 +275,6 @@ class AudioControlsWithoutData extends Component {
         <AudioScrubber isLight={this.props.isLight} />
 
         {this.playlistControls()}
-
       </div>
     );
   }

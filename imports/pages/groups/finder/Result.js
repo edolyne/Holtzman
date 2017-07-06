@@ -192,24 +192,33 @@ class TemplateWithoutData extends Component {
 }
 
 const mapStateToProps = ({ routing: { location } }) => {
-  const tags = Object.keys(location.query).length && location.query.tags
-    ? location.query.tags
-    : "";
-  const q = Object.keys(location.query).length && location.query.q
-    ? location.query.q
-    : null;
-  const campuses = Object.keys(location.query).length && location.query.campuses
-    ? location.query.campuses
-    : "";
-  const schedules = Object.keys(location.query).length &&
-    location.query.schedules
-    ? location.query.schedules
-    : "";
+  const tags =
+    Object.keys(location.query).length && location.query.tags
+      ? location.query.tags
+      : "";
+  const q =
+    Object.keys(location.query).length && location.query.q
+      ? location.query.q
+      : null;
+  const campuses =
+    Object.keys(location.query).length && location.query.campuses
+      ? location.query.campuses
+      : "";
+  const schedules =
+    Object.keys(location.query).length && location.query.schedules
+      ? location.query.schedules
+      : "";
   return { tags, q, location, campuses, schedules };
 };
 
 const CAMPUS_LOCATION_QUERY = gql`
-  query GetCampuses { campuses { entityId, id, name } }
+  query GetCampuses {
+    campuses {
+      entityId
+      id
+      name
+    }
+  }
 `;
 
 const withCampusLocations = graphql(CAMPUS_LOCATION_QUERY, {
@@ -217,8 +226,24 @@ const withCampusLocations = graphql(CAMPUS_LOCATION_QUERY, {
 });
 
 const GROUP_FINDER_QUERY = gql`
-  query GroupFinder($query: String, $tags: [String], $limit: Int, $offset: Int, $ip: String, $campuses: [String], $schedules: [Int]) {
-    groups(query: $query, attributes: $tags, limit: $limit, offset: $offset, clientIp: $ip, campuses: $campuses, schedules: $schedules) {
+  query GroupFinder(
+    $query: String
+    $tags: [String]
+    $limit: Int
+    $offset: Int
+    $ip: String
+    $campuses: [String]
+    $schedules: [Int]
+  ) {
+    groups(
+      query: $query
+      attributes: $tags
+      limit: $limit
+      offset: $offset
+      clientIp: $ip
+      campuses: $campuses
+      schedules: $schedules
+    ) {
       count
       results {
         id
@@ -231,10 +256,23 @@ const GROUP_FINDER_QUERY = gql`
         photo
         ageRange
         distance
-        schedule { description }
-        locations { location { latitude, longitude } }
-        tags { id, value }
-        campus { name, entityId }
+        schedule {
+          description
+        }
+        locations {
+          location {
+            latitude
+            longitude
+          }
+        }
+        tags {
+          id
+          value
+        }
+        campus {
+          name
+          entityId
+        }
       }
     }
   }
@@ -272,9 +310,10 @@ const withGroupFinder = graphql(GROUP_FINDER_QUERY, {
       offset: 0,
       campuses:
         ownProps.campuses && ownProps.campuses.split(",").filter(x => x),
-      schedules: ownProps.schedules && ownProps.schedules.length
-        ? ownProps.schedules.split(",").filter(x => x).map(x => getDay(x))
-        : [],
+      schedules:
+        ownProps.schedules && ownProps.schedules.length
+          ? ownProps.schedules.split(",").filter(x => x).map(x => getDay(x))
+          : [],
     },
   }),
   props: ({ data }) => ({

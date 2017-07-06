@@ -94,8 +94,8 @@ const Fuse = () =>
             </h1>
             <p className="text-left">
               Fuse is NewSpring&#39;s student ministry. Fuse is a place where
-              middle and high school
-              students can have fun while connecting to Jesus and to each other.
+              middle and high school students can have fun while connecting to
+              Jesus and to each other.
             </p>
           </div>
 
@@ -174,9 +174,13 @@ const Fuse = () =>
     >
       <div className="constrain-copy push-top push-top@lap-and-up soft-sides@handheld">
         <div className="one-whole">
-          <h3 className="italic flush"><strong>This year at</strong></h3>
+          <h3 className="italic flush">
+            <strong>This year at</strong>
+          </h3>
           <h2 className="flush">Gauntlet</h2>
-          <h3 className="italic"><strong>we saw</strong></h3>
+          <h3 className="italic">
+            <strong>we saw</strong>
+          </h3>
         </div>
       </div>
 

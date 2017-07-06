@@ -78,14 +78,11 @@ export default class Layout extends Component {
     return (
       <div>
         <Split nav classes={["background--light-primary"]}>
-
           <Meta title="Schedule Your Giving" image={photo} />
 
           <Right background={photo} mobile={false} />
-
         </Split>
         <Left scroll classes={["background--light-secondary"]} ref="container">
-
           {recoverableSchedules.length &&
             <div
               className={
@@ -98,15 +95,13 @@ export default class Layout extends Component {
                 </h4>
                 <h5 className="text-light-primary soft-half-sides soft-bottom">
                   We have found giving schedules from our previous system that
-                  need to be
-                  transferred! To transfer a schedule, click below.
+                  need to be transferred! To transfer a schedule, click below.
                 </h5>
 
                 <Link to="/give/schedules/transfer" className="btn--light">
                   Transfer Schedules
                 </Link>
               </div>
-
             </div>}
 
           <div
@@ -138,7 +133,6 @@ export default class Layout extends Component {
                   accounts &&
                   accounts.length &&
                   <AddSchedule accounts={accounts} />}
-
               </div>
             </div>
           </div>
@@ -161,8 +155,7 @@ export default class Layout extends Component {
                     <p>
                       <em>
                         Please sign in or create an account to setup or view
-                        your scheduled
-                        contributions!
+                        your scheduled contributions!
                       </em>
                     </p>
                   </div>
@@ -184,8 +177,8 @@ export default class Layout extends Component {
                     <p>
                       <em>
                         You don&#39;t have any active scheduled contributions.
-                        If you created a new
-                        schedule, it may take a few minutes to be reflected here
+                        If you created a new schedule, it may take a few minutes
+                        to be reflected here
                       </em>
                     </p>
                   </div>
@@ -211,15 +204,12 @@ export default class Layout extends Component {
 
                       return (
                         <div key={i} className="soft card">
-
                           <Link to={`/give/schedules/${schedule.id}`}>
-
                             <div
                               className="grid"
                               style={{ verticalAlign: "middle" }}
                               key={i}
                             >
-
                               <div
                                 className="grid__item one-half"
                                 style={{ verticalAlign: "middle" }}
@@ -249,7 +239,6 @@ export default class Layout extends Component {
                                     </em>
                                   </small>
                                 </p>
-
                               </div>
 
                               <div
@@ -278,12 +267,9 @@ export default class Layout extends Component {
                                     />
                                   </h4>
                                 </div>
-
                               </div>
-
                             </div>
                           </Link>
-
                         </div>
                       );
                     })}
@@ -329,15 +315,12 @@ export default class Layout extends Component {
 
                         return (
                           <div key={i} className="soft card">
-
                             <Link to={`/give/schedules/${schedule.id}`}>
-
                               <div
                                 className="grid"
                                 style={{ verticalAlign: "middle" }}
                                 key={i}
                               >
-
                                 <div
                                   className="grid__item one-half"
                                   style={{ verticalAlign: "middle" }}
@@ -367,7 +350,6 @@ export default class Layout extends Component {
                                       </em>
                                     </small>
                                   </p>
-
                                 </div>
 
                                 <div
@@ -399,23 +381,18 @@ export default class Layout extends Component {
                                       />
                                     </h4>
                                   </div>
-
                                 </div>
-
                               </div>
                             </Link>
-
                           </div>
                         );
                       })}
-
                   </div>
                 );
               }
               return null;
             })()}
           </div>
-
         </Left>
       </div>
     );

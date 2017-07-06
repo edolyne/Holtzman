@@ -48,7 +48,11 @@ if (process.env.NATIVE) {
 
     render() {
       if (this.props.pathname === "/welcome") {
-        return <div>{this.props.children}</div>;
+        return (
+          <div>
+            {this.props.children}
+          </div>
+        );
       }
       const { visibility, playing } = this.props.audio;
 

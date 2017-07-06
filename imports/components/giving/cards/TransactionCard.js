@@ -24,7 +24,6 @@ export const DetailCard = ({
   <div className="grid" style={{ verticalAlign: "middle" }}>
     <div className="grid__item one-half" style={{ verticalAlign: "middle" }}>
       <div className="relative">
-
         {/* person photo */}
         {person &&
           <div
@@ -33,7 +32,6 @@ export const DetailCard = ({
           />}
 
         <div className="soft-double-left@palm-wide-and-up push-left@palm-wide-and-up">
-
           {/* account name */}
           <h5
             className="text-dark-secondary flush"
@@ -59,7 +57,6 @@ export const DetailCard = ({
           </p>
         </div>
       </div>
-
     </div>
 
     <div
@@ -67,7 +64,6 @@ export const DetailCard = ({
       style={{ verticalAlign: "middle" }}
     >
       <div>
-
         <Currency
           amount={transactionDetail.amount}
           baseHeadingSize="4"

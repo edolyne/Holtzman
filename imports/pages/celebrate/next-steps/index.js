@@ -128,17 +128,13 @@ export const NextSteps = () =>
         <h3 className="text-center">Celebrating Next Steps</h3>
         <p className="constrain-copy">
           Salvation is a starting point, not a destination. NewSpring exists to
-          connect people to
-          Jesus and each other. We will always be a church that celebrates next
-          steps as well as
-          salvations. Here&#39;s a look at how we&#39;ve seen people take their{
-            " "
-          }
+          connect people to Jesus and each other. We will always be a church
+          that celebrates next steps as well as salvations. Here&#39;s a look at
+          how we&#39;ve seen people take their{" "}
           <a href={"https://newspring.cc/nextsteps"} alt={"link to next steps"}>
             next steps
           </a>{" "}
-          in
-          2016.
+          in 2016.
         </p>
       </div>
     </div>
@@ -388,16 +384,13 @@ export const NextSteps = () =>
         <h3 className="text-center">Connect</h3>
         <p className="constrain-copy">
           We all need friends we can be ourselves with, people who make us laugh
-          till it hurts and
-          who will be there when we need prayer.{" "}
+          till it hurts and who will be there when we need prayer.{" "}
           <a href={"https://newspring.cc/connect"} alt={"link to connect"}>
             Connect
           </a>{" "}
-          launched
-          in 2016 as a way to help people connect to Jesus and to each other.
-          This event is for
-          anyone who wants to learn more about NewSpring and to
-          get to know people in the church.
+          launched in 2016 as a way to help people connect to Jesus and to each
+          other. This event is for anyone who wants to learn more about
+          NewSpring and to get to know people in the church.
         </p>
         <div className="floating">
           <div className="soft-double@lap-and-up hard-sides@handheld text-center three-quarters@lap-wide-and-up nine-tenths@lap floating__item">
@@ -493,12 +486,10 @@ export const NextSteps = () =>
           </div>
           <p className="constrain-copy@lap-and-up push-double-bottom@handheld">
             God has called our church to make a difference in South Carolina.
-            From rebuilding homes
-            and hosting community service days to giving
+            From rebuilding homes and hosting community service days to giving
             supplies to low-income schools, the money we budget for local
-            missions creates
-            opportunities to share Jesus&#39; love with our neighbors
-            across the state.
+            missions creates opportunities to share Jesus&#39; love with our
+            neighbors across the state.
           </p>
         </div>
         <div
@@ -564,12 +555,11 @@ export const NextSteps = () =>
           </div>
           <p className="constrain-copy@lap-and-up">
             We partner with Freedom Church to share Jesus&#39; love with people
-            around the world. By
-            partnering with local churches, we&#39;re able to
-            participate in ministry that continues long after our team comes
-            home. The local church
-            is the hope of the world. When we work together, we
-            begin to see the Great Commission happening before our eyes.
+            around the world. By partnering with local churches, we&#39;re able
+            to participate in ministry that continues long after our team comes
+            home. The local church is the hope of the world. When we work
+            together, we begin to see the Great Commission happening before our
+            eyes.
           </p>
         </div>
       </div>

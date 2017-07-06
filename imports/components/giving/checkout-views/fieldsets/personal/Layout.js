@@ -8,11 +8,7 @@ type IHeader = {
 
 const Header = ({ override }: IHeader) => {
   if (override) return override;
-  return (
-    <h4 className="text-center">
-      Personal Details
-    </h4>
-  );
+  return <h4 className="text-center">Personal Details</h4>;
 };
 
 type INextButton = {
@@ -78,7 +74,6 @@ const Layout = ({
     {children}
 
     <div className="soft-sides">
-
       <div className="grid">
         <div className="grid__item one-half">
           <Forms.Input

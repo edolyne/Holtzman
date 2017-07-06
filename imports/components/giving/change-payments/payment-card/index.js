@@ -49,7 +49,6 @@ export default ({
 }: IPaymentCard) =>
   <div style={cardStyle} id={accountId} onClick={onClick}>
     <div className="soft-ends push-double-left text-left hard-right outlined--light outlined--bottom relative">
-
       <div className="display-inline-block soft-half-ends one-whole">
         <h6 className="flush-bottom float-left text-dark-tertiary">
           {accountName}
@@ -62,7 +61,6 @@ export default ({
           <AccountType width="40px" height="25px" type={paymentType} />
         </span>
       </h5>
-
     </div>
 
     <div className="locked-ends locked-sides">

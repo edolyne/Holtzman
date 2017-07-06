@@ -9,7 +9,9 @@ import Hover from "./right-css";
 import PanelStyles from "./panel-css";
 
 export const DefaultWrapper = props =>
-  <section className={props.imageclasses.join(" ")}>{props.children}</section>;
+  <section className={props.imageclasses.join(" ")}>
+    {props.children}
+  </section>;
 
 DefaultWrapper.propTypes = {
   imageclasses: PropTypes.object,

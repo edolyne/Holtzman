@@ -25,7 +25,6 @@ export default class ProgressStep extends Component {
     return (
       <div className="progress-bar text-center">
         <div className="progress">
-
           {steps.map((step, key) => {
             const classes = [];
             const style = { zIndex: 1 };
@@ -40,7 +39,6 @@ export default class ProgressStep extends Component {
               <div className={classes.join(" ")} style={style} key={key} />
             );
           })}
-
         </div>
         <p className="flush-bottom">
           <small className="italic display-inline-block push-half-top">

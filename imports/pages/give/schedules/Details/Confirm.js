@@ -33,8 +33,7 @@ class ConfirmWithoutData extends Component {
           <h3 className="text-alert push-ends">Are you sure?</h3>
           <p className="text-left">
             Want to stop your scheduled contributions? You can always create
-            another when you&#39;re
-            ready.
+            another when you&#39;re ready.
           </p>
           <button
             className="one-whole btn push-ends btn--alert"
@@ -53,8 +52,7 @@ class ConfirmWithoutData extends Component {
           <p className="test-dark-tertiary text-left">
             <em>
               If you would like a member of our customer support team to follow
-              up with you
-              regarding your contributions, click{" "}
+              up with you regarding your contributions, click{" "}
               <a
                 rel="noopener noreferrer"
                 target="_blank"

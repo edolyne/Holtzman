@@ -70,7 +70,7 @@ const CardSlider = ({ children }: ICardSlider) => {
           return (
             <div
               className={`card floating display-inline-block ${childCount !==
-                count
+              count
                 ? "push-right"
                 : ""}`}
               style={dynamicWidth()}
@@ -80,7 +80,6 @@ const CardSlider = ({ children }: ICardSlider) => {
             </div>
           );
         })}
-
       </section>
     </div>
   );

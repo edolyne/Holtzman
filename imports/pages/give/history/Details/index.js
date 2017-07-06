@@ -52,11 +52,15 @@ class DetailsWithoutData extends Component {
 }
 
 const ENTRIES_QUERY = gql`
-  query GetTaggedContent($tagName: String!, $limit: Int, $includeChannels: [String]) {
+  query GetTaggedContent(
+    $tagName: String!
+    $limit: Int
+    $includeChannels: [String]
+  ) {
     entries: taggedContent(
-      tagName: $tagName,
-      limit: $limit,
-      includeChannels: $includeChannels,
+      tagName: $tagName
+      limit: $limit
+      includeChannels: $includeChannels
       cache: false
     ) {
       entryId: id

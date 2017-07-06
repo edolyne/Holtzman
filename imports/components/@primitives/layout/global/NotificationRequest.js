@@ -15,7 +15,7 @@ import { GraphQL } from "../../../../data/graphql";
 // XXX Query is duplicated within profile section
 const GET_PERSON_QUERY = gql`
   query GetPerson {
-    person: currentPerson (cache: false) {
+    person: currentPerson(cache: false) {
       firstName
       nickName
     }
@@ -145,13 +145,10 @@ class NotificationPrompt extends Component {
     return (
       <div>
         <h4 className="soft-top">
-          Hi
-          {" "}
+          Hi{" "}
           {!data.person ? null : data.person.nickName || data.person.firstName}
         </h4>
-        <p>
-          Do you want us to notify you when new information is available?
-        </p>
+        <p>Do you want us to notify you when new information is available?</p>
         <button className="btn one-whole" onClick={this.prompt}>
           Notify Me
         </button>

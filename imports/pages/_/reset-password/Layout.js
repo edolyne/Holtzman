@@ -22,9 +22,7 @@ const Layout = ({ submit, save, state }) =>
       submit={submit}
     >
       <div className="push-double">
-        <h4 className="text-center">
-          Change Password
-        </h4>
+        <h4 className="text-center">Change Password</h4>
       </div>
 
       <Forms.Input
@@ -60,11 +58,7 @@ const Layout = ({ submit, save, state }) =>
           btnClasses.push("btn");
         }
 
-        return (
-          <button className={btnClasses.join(" ")}>
-            Enter
-          </button>
-        );
+        return <button className={btnClasses.join(" ")}>Enter</button>;
       })()}
     </Forms.Form>
   </div>;

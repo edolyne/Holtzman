@@ -94,7 +94,9 @@ class EventSingleWithoutData extends Component {
                 "soft-double@lap-wide-and-up push-top push-double-top@lap-and-up"
               }
             >
-              <h2 className="capitalize">{event.title}</h2>
+              <h2 className="capitalize">
+                {event.title}
+              </h2>
               <div dangerouslySetInnerHTML={react.markup(event)} />
             </section>
             <RelatedContent

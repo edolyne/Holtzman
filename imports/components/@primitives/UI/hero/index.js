@@ -48,13 +48,27 @@ type IHeroLink = {
 };
 
 export const HeroLink = (props: IHeroLink) => {
-  if (!props.to) return <Link>{props.children}</Link>;
-
-  if (Meteor.isCordova) {
-    return <Link to={props.to} onClick={inAppLink}>{props.children}</Link>;
+  if (!props.to) {
+    return (
+      <Link>
+        {props.children}
+      </Link>
+    );
   }
 
-  return <a href={props.to}>{props.children}</a>;
+  if (Meteor.isCordova) {
+    return (
+      <Link to={props.to} onClick={inAppLink}>
+        {props.children}
+      </Link>
+    );
+  }
+
+  return (
+    <a href={props.to}>
+      {props.children}
+    </a>
+  );
 };
 
 type IHero = {

@@ -36,10 +36,8 @@ class TemplateWithoutData extends Component {
                 <div className="soft-double">
                   <Loading />
                 </div>
-
               </div>
             </div>
-
           </div>
         </div>
       );
@@ -71,7 +69,6 @@ class TemplateWithoutData extends Component {
                 <AccountsWithData />
               </div>
             </div>
-
           </div>
         </div>
       );
@@ -132,7 +129,13 @@ const Routes = [
       // assume logged in
       graphql
         .query({
-          query: gql`{ currentPerson { guid }}`,
+          query: gql`
+            {
+              currentPerson {
+                guid
+              }
+            }
+          `,
           forceFetch: true,
         })
         .then(({ data }) => {

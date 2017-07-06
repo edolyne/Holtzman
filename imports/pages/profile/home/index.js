@@ -67,7 +67,7 @@ class HomeWithoutData extends Component {
 // XXX Query is duplicated within profile section
 const GET_PERSON_QUERY = gql`
   query GetPerson {
-    person: currentPerson (cache: false) {
+    person: currentPerson(cache: false) {
       photo
       firstName
       nickName

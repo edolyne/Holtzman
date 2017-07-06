@@ -47,7 +47,9 @@ export default class DevotionsSingleContent extends Component {
           );
         })()}
         <div className="soft soft-double@palm-wide-and-up push-top">
-          <h2 className="capitalize">{devotion.title}</h2>
+          <h2 className="capitalize">
+            {devotion.title}
+          </h2>
           {/* XXX update scripture formatting */}
           {(() => {
             if (!devotion.content.scripture) return null;
@@ -63,13 +65,11 @@ export default class DevotionsSingleContent extends Component {
           })()}
 
           <div dangerouslySetInnerHTML={react.markup(devotion)} />
-
         </div>
         <RelatedContent
           excludedIds={[devotion.id]}
           tags={devotion.content.tags || defaultArray}
         />
-
       </section>
     );
   }

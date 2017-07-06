@@ -87,11 +87,29 @@ const SCHEDULED_TRANSACTIONS_QUERY = gql`
       gateway
       start
       date
-      details { amount, account { name, description, id: entityId } }
-      payment { paymentType, accountNumber, id }
-      schedule { value, description }
+      details {
+        amount
+        account {
+          name
+          description
+          id: entityId
+        }
+      }
+      payment {
+        paymentType
+        accountNumber
+        id
+      }
+      schedule {
+        value
+        description
+      }
     }
-    person: currentPerson { nickName, firstName, lastName }
+    person: currentPerson {
+      nickName
+      firstName
+      lastName
+    }
   }
 `;
 
@@ -106,7 +124,13 @@ const FINANCIAL_ACCOUNTS_QUERY = gql`
       summary
       image
       order
-      images { fileName, fileType, fileLabel, s3, cloudfront }
+      images {
+        fileName
+        fileType
+        fileLabel
+        s3
+        cloudfront
+      }
     }
   }
 `;

@@ -147,9 +147,7 @@ export default class NavLink extends Component {
               }
               return null;
             })()}
-
           </div>
-
         </div>
       </button>
     );

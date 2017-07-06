@@ -110,11 +110,9 @@ export default ({
                   schedule.payment.accountNumber &&
                   <h4 className="text-dark-primary soft-half-top">
                     {schedule.payment.accountNumber.slice(-4)} {"  "}
-
                     {schedule.payment.paymentType &&
                       schedule.payment.paymentType === "ACH" &&
                       <AccountType width="30px" height="20px" type="Bank" />}
-
                     {schedule.payment.paymentType &&
                       schedule.payment.paymentType !== "ACH" &&
                       <AccountType
@@ -124,7 +122,6 @@ export default ({
                       />}
                   </h4>}
               </div>}
-
           </div>
           <hr
             className="hard push-bottom outlined--light outlined--bottom"
@@ -139,7 +136,9 @@ export default ({
                   key={i}
                 >
                   <div className="floating__item float-left">
-                    <h4 className="hard text-dark-primary">{name}</h4>
+                    <h4 className="hard text-dark-primary">
+                      {name}
+                    </h4>
                   </div>
                   <div className="floating__item float-right">
                     <Currency
@@ -197,12 +196,10 @@ export default ({
                   <small>
                     <em>
                       To change details about a schedule, please cancel the
-                      current one and create a
-                      new schedule with the desired information. We are sorry
-                      for any inconvenience
-                      this may cause and are working to provide the ability to
-                      edit contribution
-                      schedules in the future.
+                      current one and create a new schedule with the desired
+                      information. We are sorry for any inconvenience this may
+                      cause and are working to provide the ability to edit
+                      contribution schedules in the future.
                     </em>
                   </small>
                 </p>
@@ -230,23 +227,22 @@ export default ({
                   href="//rock.newspring.cc/workflows/152?Topic=Stewardship"
                 >
                   contact us
-                </a>
-                {" "} and someone will be happy to assist you.
+                </a>{" "}
+                and someone will be happy to assist you.
               </em>
             </p>
           </div>}
-
         {schedule &&
           schedule.transactions &&
           <TransactionList transactions={schedule.transactions} />}
-
         <hr className="push-double-top flush-bottom" />
         <h4 className="soft soft-double-ends text-center@lap-and-up flush-bottom">
           Recent Articles About Giving
         </h4>
-
         {loadingEntries &&
-          <div className="one-whole soft text-center"><Spinner /></div>}
+          <div className="one-whole soft text-center">
+            <Spinner />
+          </div>}
         {!loadingEntries &&
           <div className="grid">
             {entries &&

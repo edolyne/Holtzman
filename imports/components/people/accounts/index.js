@@ -101,7 +101,13 @@ class AccountsContainer extends Component {
           ) {
             nextProps.client
               .query({
-                query: gql`{ currentPerson { guid }}`,
+                query: gql`
+                  {
+                    currentPerson {
+                      guid
+                    }
+                  }
+                `,
                 forceFetch: true,
               })
               .then(({ data }) => {
@@ -265,8 +271,8 @@ class AccountsContainer extends Component {
 const mapDispatchToProps = { ...accountsActions, ...modalActions };
 
 const PERSON_QUERY = gql`
-  query GetPersonByGuid($guid:ID) {
-    person(guid:$guid) {
+  query GetPersonByGuid($guid: ID) {
+    person(guid: $guid) {
       firstName
       lastName
       email
@@ -283,8 +289,8 @@ const withPerson = graphql(PERSON_QUERY, {
     variables: {
       guid:
         ownProps.location &&
-          ownProps.location.query &&
-          ownProps.location.query.guid,
+        ownProps.location.query &&
+        ownProps.location.query.guid,
     },
   }),
 });

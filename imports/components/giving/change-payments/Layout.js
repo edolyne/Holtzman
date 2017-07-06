@@ -17,9 +17,7 @@ const Layout = ({
 }: ILayout) =>
   <div className="soft-double-top">
     <div className="soft-sides flush-bottom push-double-top@lap-and-up">
-      <h4 className="text-center flush-bottom">
-        Change Payment Account
-      </h4>
+      <h4 className="text-center flush-bottom">Change Payment Account</h4>
     </div>
     <div className="soft">
       {savedAccounts.map((account, key) =>

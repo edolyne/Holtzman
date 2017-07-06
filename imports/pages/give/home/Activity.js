@@ -64,9 +64,10 @@ export class GivingActivity extends Component {
   };
 
   additionalAmount = (details: Object) => {
-    const amount = details.amount === parseInt(details.amount, 10)
-      ? details.amount
-      : details.amount.toFixed(2);
+    const amount =
+      details.amount === parseInt(details.amount, 10)
+        ? details.amount
+        : details.amount.toFixed(2);
 
     return (
       <span>
@@ -85,10 +86,11 @@ export class GivingActivity extends Component {
     const scheduled = transaction.schedule !== null;
 
     // show .00 on whole-dollar amounts. Don't show on even dollars
-    const amount = transaction.details[0].amount ===
+    const amount =
+      transaction.details[0].amount ===
       parseInt(transaction.details[0].amount, 10)
-      ? transaction.details[0].amount
-      : transaction.details[0].amount.toFixed(2);
+        ? transaction.details[0].amount
+        : transaction.details[0].amount.toFixed(2);
 
     if (
       (transaction.status === null ||
@@ -103,14 +105,11 @@ export class GivingActivity extends Component {
         <p>
           Your {scheduled ? "scheduled " : ""}contribution of{" "}
           <strong>${amount} </strong>
-          to{" "}
-          <strong>
-            {transaction.details[0].account.name}{" "}
-          </strong>
+          to <strong>{transaction.details[0].account.name} </strong>
           {transaction.details.length > 1
             ? this.additionalAmount(transaction.details[1])
-            : null}
-          {" "}was successful.
+            : null}{" "}
+          was successful.
         </p>
       );
     } else if (transaction.status === "Failed") {
@@ -118,15 +117,15 @@ export class GivingActivity extends Component {
       message = (
         <p>
           Your {scheduled ? "scheduled " : ""}contribution to
-          <strong>
-            {" "}{transaction.details[0].account.name}{" "}
-          </strong>
+          <strong> {transaction.details[0].account.name} </strong>
           {transaction.details.length > 1
-            ? <span>and<strong> {transaction.details[1].name} </strong></span>
-            : null}
-          {" "}was unsuccessful.
+            ? <span>
+                and<strong> {transaction.details[1].name} </strong>
+            </span>
+            : null}{" "}
+          was unsuccessful.
           {transaction.statusMessage !== null &&
-            transaction.statusMessage !== ""
+          transaction.statusMessage !== ""
             ? ` Unfortunately, ${transaction.statusMessage}.`
             : ""}
         </p>
@@ -136,13 +135,13 @@ export class GivingActivity extends Component {
       message = (
         <p>
           Your {scheduled ? "scheduled " : ""}contribution to
-          <strong>
-            {" "}{transaction.details[0].account.name}{" "}
-          </strong>
+          <strong> {transaction.details[0].account.name} </strong>
           {transaction.details.length > 1
-            ? <span>and<strong> {transaction.details[1].name} </strong></span>
-            : null}
-          {" "}is <strong>pending</strong>.
+            ? <span>
+                and<strong> {transaction.details[1].name} </strong>
+            </span>
+            : null}{" "}
+          is <strong>pending</strong>.
         </p>
       );
     } else {

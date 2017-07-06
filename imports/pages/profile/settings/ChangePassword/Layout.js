@@ -32,9 +32,7 @@ const Layout = ({ submit, save, state }) =>
       submit={submit}
     >
       <div className="push-double">
-        <h4 className="text-center">
-          Change Password
-        </h4>
+        <h4 className="text-center">Change Password</h4>
       </div>
 
       <Forms.Input

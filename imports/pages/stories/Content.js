@@ -42,8 +42,12 @@ const StoriesContent = props => {
           return <SingleVideoPlayer ooyalaId={story.content.ooyalaId} />;
         })()}
         <div className="soft soft-double-sides@palm-wide-and-up push-top">
-          <h2 className="capitalize">{story.title}</h2>
-          <h4 className="text-dark-tertiary">{story.subtitle}</h4>
+          <h2 className="capitalize">
+            {story.title}
+          </h2>
+          <h4 className="text-dark-tertiary">
+            {story.subtitle}
+          </h4>
           <div dangerouslySetInnerHTML={react.markup(story)} />
         </div>
       </section>

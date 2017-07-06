@@ -96,14 +96,12 @@ export default class Layout extends Component {
               : ["background--light-primary"]
           }
         >
-
           <Meta title="Transfer Your Giving Schedule" />
 
           <Right
             background="//s3.amazonaws.com/ns.assets/apollos/29516.marketing.cen.webad.thebestisyettocome_1x2.png"
             mobile={false}
           />
-
         </Split>
         <Left
           scroll
@@ -153,16 +151,13 @@ export default class Layout extends Component {
                       </h4>
                       <h5 className="soft-half-sides">
                         We have found giving schedules from our previous giving
-                        system that need to
-                        be transferred! To transfer a schedule, click below and
-                        enter your payment
-                        details.
+                        system that need to be transferred! To transfer a
+                        schedule, click below and enter your payment details.
                       </h5>
                     </div>
                   </div>
 
                   <div className="soft-half soft-sides@portable soft-double-sides@anchored">
-
                     {/*
 
                     <h4 className="soft soft-double-bottom text-light-primary text-center flush-bottom soft-double@lap-and-up">
@@ -197,7 +192,6 @@ export default class Layout extends Component {
                                 style={{ verticalAlign: "middle" }}
                                 key={i}
                               >
-
                                 <div
                                   className="grid__item two-thirds"
                                   style={{ verticalAlign: "middle" }}
@@ -251,9 +245,7 @@ export default class Layout extends Component {
                                       />
                                     </h4>
                                   </div>
-
                                 </div>
-
                               </div>
                             </div>
 
@@ -292,7 +284,6 @@ export default class Layout extends Component {
                               }
                               return null;
                             })()}
-
                           </div>
                         );
                       })}
@@ -302,15 +293,13 @@ export default class Layout extends Component {
                           <small>
                             <em>
                               Please be aware that your existing schedule will
-                              continue to charge
-                              the account on file until you transfer it to our
-                              new system.
+                              continue to charge the account on file until you
+                              transfer it to our new system.
                             </em>
                           </small>
                         </p>
                       </div>
                     </div>
-
                   </div>
                 </div>
               );
@@ -334,31 +323,24 @@ export default class Layout extends Component {
                     </p>
                     <p>
                       We believe that every number has a name, every name has a
-                      story, and every
-                      story matters to God. Because you give, we are able to see
-                      thousands of life
-                      change stories every year at NewSpring Church. There is no
-                      organization with
+                      story, and every story matters to God. Because you give,
+                      we are able to see thousands of life change stories every
+                      year at NewSpring Church. There is no organization with
                       more potential to change the world than the local church.
-                      Thank you for being
-                      a difference maker!
+                      Thank you for being a difference maker!
                     </p>
 
                     <p>
                       <em>
                         “Every number has a name, every name has a story, and
-                        every story matters to
-                        God.”
+                        every story matters to God.”
                       </em>
-
                     </p>
-
                   </div>
                 </div>
               </div>
             );
           })()}
-
         </Left>
       </div>
     );

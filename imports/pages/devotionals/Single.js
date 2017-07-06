@@ -125,7 +125,6 @@ class DevotionsSingle extends Component {
 
     return (
       <SwipeViews selectedIndex={this.state.selectedIndex} disableSwipe>
-
         <div title="Devotional">
           <DevotionsSingleContent
             devotion={devotion}

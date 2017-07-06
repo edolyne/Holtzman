@@ -103,8 +103,12 @@ class StudiesSingleWithoutData extends Component {
             className={collections.classes(study)}
             style={this.hackBackgroundStyles()}
           />
-          <style>{styles.overlay(study)}</style>
-          <style>{collections.backgroundStyles(study)}</style>
+          <style>
+            {styles.overlay(study)}
+          </style>
+          <style>
+            {collections.backgroundStyles(study)}
+          </style>
           <StudyHero study={study} />
           <section
             className={`${study.content.isLight

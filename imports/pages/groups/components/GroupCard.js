@@ -66,9 +66,7 @@ export const GroupCardWithoutData = ({ group, router, onHover }) => {
           {group.campus &&
             group.campus.name &&
             <Tag val={group.campus.name} urlKey="campuses" />}
-
         </div>
-
       </SideBySide>
     </button>
   );

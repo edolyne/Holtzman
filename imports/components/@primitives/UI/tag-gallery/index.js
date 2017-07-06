@@ -91,7 +91,9 @@ class TagGalleryWithoutData extends Component {
                 <h1 className="" style={{ fontWeight: "900" }}>
                   {this.state.activeLabel}
                 </h1>
-                <h3 className="flush">{this.state.activeCopy}</h3>
+                <h3 className="flush">
+                  {this.state.activeCopy}
+                </h3>
               </div>
             </div>
           </div>

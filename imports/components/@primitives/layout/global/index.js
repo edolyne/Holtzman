@@ -9,7 +9,9 @@ import gql from "graphql-tag";
 import createContainer from "../../../../deprecated/meteor/react-meteor-data";
 import { routeActions } from "../../../../data/store/routing";
 
-import NotificationRequest, { UPDATE_ATTRIBUTE_MUTATION } from "./NotificationRequest";
+import NotificationRequest, {
+  UPDATE_ATTRIBUTE_MUTATION,
+} from "./NotificationRequest";
 
 import Modal from "../../modals";
 import Meta from "../../../shared/meta";
@@ -64,7 +66,6 @@ const App = ({ children, className, native }) =>
       <Nav />
       <Watermark />
     </div>
-
   </div>;
 
 App.propTypes = {
@@ -78,7 +79,7 @@ const Blank = () => <div />;
 const PERSON_QUERY = gql`
   query GetPerson {
     person: currentPerson {
-      attributes(key:"NotificationIgnoreDate"){
+      attributes(key: "NotificationIgnoreDate") {
         values {
           value
         }
@@ -197,14 +198,15 @@ const withRedux = connect(map);
 
 export const URL_TITLE_QUERY = gql`
   query contentWithUrlTitle(
-    $parentChannel: String!,
-    $parentUrl: String!,
-    $childChannel: String = "",
-    $childUrl: String = "",
+    $parentChannel: String!
+    $parentUrl: String!
+    $childChannel: String = ""
+    $childUrl: String = ""
     $hasChild: Boolean = false
   ) {
     parent: contentWithUrlTitle(channel: $parentChannel, urlTitle: $parentUrl)
-    child: contentWithUrlTitle(channel: $childChannel, urlTitle: $childUrl) @include(if: $hasChild)
+    child: contentWithUrlTitle(channel: $childChannel, urlTitle: $childUrl)
+      @include(if: $hasChild)
   }
 `;
 
@@ -346,7 +348,9 @@ class GlobalWithoutData extends Component {
     }
     return (
       <div id="global">
-        <style>{scrollbarStyles}</style>
+        <style>
+          {scrollbarStyles}
+        </style>
         {this.state.universalLinkLoading && <Loading />}
         <App {...this.props} />
         <GlobalData dispatch={dispatch} client={client} />

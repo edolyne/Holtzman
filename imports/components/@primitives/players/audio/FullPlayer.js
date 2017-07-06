@@ -205,15 +205,18 @@ class FullPlayerWithoutData extends Component {
           className={collections.classes(album)}
           style={this.hackBackgroundStyles()}
         />
-        <style>{styles.overlay(album)}</style>
-        <style>{collections.backgroundStyles(album)}</style>
+        <style>
+          {styles.overlay(album)}
+        </style>
+        <style>
+          {collections.backgroundStyles(album)}
+        </style>
 
         <div
           className={`${css(Styles["player-flex"])} ${css(
             Styles["player-container"],
           )}`}
         >
-
           <section
             ref="artworkContainer"
             className="hard"
@@ -231,7 +234,6 @@ class FullPlayerWithoutData extends Component {
               Styles["player-flex-one"],
             )}`}
           >
-
             <AudioTitle
               trackTitle={track.title}
               artistName={this.getArtist()}
@@ -242,9 +244,7 @@ class FullPlayerWithoutData extends Component {
             />
 
             <AudioControls audio={this.props} isLight={isLight} />
-
           </div>
-
         </div>
       </div>
     );

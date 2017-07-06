@@ -12,9 +12,8 @@ const ScheduleThanks = ({ total, schedule }: IScheduleThanks) => {
   if (!schedule || !schedule.start) return null;
   return (
     <p className="text-left">
-      Thank you for your contribution of {total}{" "}
-      starting on {moment(schedule.start).format("MMM D, YYYY")}{" "}
-      to NewSpring Church.
+      Thank you for your contribution of {total} starting on{" "}
+      {moment(schedule.start).format("MMM D, YYYY")} to NewSpring Church.
     </p>
   );
 };
@@ -29,8 +28,8 @@ const OneTimeThanks = ({ total, email, schedule }: IOneTimeThanks) => {
   if (schedule) return null;
   return (
     <p className="text-left">
-      Thank you for your contribution of {total} to NewSpring Church.
-      We will email a receipt to {email}
+      Thank you for your contribution of {total} to NewSpring Church. We will
+      email a receipt to {email}
     </p>
   );
 };
@@ -41,7 +40,11 @@ type IAdditionalMessage = {
 
 const AdditionalMessage = ({ additionalMessage }: IAdditionalMessage) => {
   if (!additionalMessage) return null;
-  return <h5>{additionalMessage}</h5>;
+  return (
+    <h5>
+      {additionalMessage}
+    </h5>
+  );
 };
 
 type ICreateAccountFromGuest = {
@@ -57,8 +60,8 @@ const CreateAccountFromGuest = ({
   return (
     <div>
       <p className="text-left">
-        If you would like to view your giving history,
-        make it easier to give, and more, create a NewSpring Account!
+        If you would like to view your giving history, make it easier to give,
+        and more, create a NewSpring Account!
       </p>
       <button className="btn one-whole push-bottom" onClick={onClick}>
         Create Account

@@ -121,10 +121,9 @@ const KidSpring = () =>
               <h1 className="uppercase push-bottom">KidSpring</h1>
               <p className="text-left">
                 KidSpring is the children&#39;s ministry at NewSpring Church.
-                Every Sunday, children
-                from birth through fifth grade experience Jesus on their level
-                in environments that
-                are safe, fun, and age-appropriate.
+                Every Sunday, children from birth through fifth grade experience
+                Jesus on their level in environments that are safe, fun, and
+                age-appropriate.
               </p>
             </div>
           </div>
@@ -204,7 +203,6 @@ const KidSpring = () =>
         </div>
       </div>
     </div>
-
   </div>;
 /* eslint-enable max-len */
 

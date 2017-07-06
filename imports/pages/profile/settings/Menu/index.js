@@ -24,7 +24,9 @@ const RenderCell = ({ name, iconFunc, last, children }) => {
     if (!last) classes.push("outlined--light", "outlined--bottom");
     return (
       <div className={classes.join(" ")}>
-        <h6 className="soft-half-left flush display-inline-block">{name}</h6>
+        <h6 className="soft-half-left flush display-inline-block">
+          {name}
+        </h6>
         <i className={`float-right ${icon}`} />
         {children}
       </div>
@@ -32,7 +34,9 @@ const RenderCell = ({ name, iconFunc, last, children }) => {
   }
   return (
     <div className="card soft-ends soft-right text-left outlined--light">
-      <h6 className="soft-left flush display-inline-block">{name}</h6>
+      <h6 className="soft-left flush display-inline-block">
+        {name}
+      </h6>
       <i className={`float-right ${icon}`} />
       {children}
     </div>

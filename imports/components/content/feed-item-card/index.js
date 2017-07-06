@@ -196,12 +196,18 @@ export const FeedItem = ({
     itemStyles={itemStyles(item)}
     linkAll
   >
-    <style>{overlayStyles(item)}</style>
+    <style>
+      {overlayStyles(item)}
+    </style>
 
     <div className="text-left">
-      <h4 className={h4Classes(item)}>{item.title}</h4>
+      <h4 className={h4Classes(item)}>
+        {item.title}
+      </h4>
       <i className={iconClasses(item)} />
-      <h7 className={categoryClasses(item)}>{categories.name(item)}</h7>
+      <h7 className={categoryClasses(item)}>
+        {categories.name(item)}
+      </h7>
       {!disableLike &&
         <h7
           onClick={stopClick(toggleLike)}

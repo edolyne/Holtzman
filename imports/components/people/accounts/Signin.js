@@ -193,7 +193,8 @@ class SignIn extends Component {
                     <h6 className="flush-bottom text-dark-primary push-back-half-top">
                       It looks like you may have a NewSpring account already!
                       <span>
-                        &nbsp; Is this your email?<br /><br />
+                        &nbsp; Is this your email?<br />
+                        <br />
                         <a
                           href=""
                           onClick={this.changeEmails}
@@ -202,7 +203,8 @@ class SignIn extends Component {
                           {this.props.alternateAccounts[0]}
                         </a>?
                       </span>
-                      <br /><br />Click below to sign in with this email.
+                      <br />
+                      <br />Click below to sign in with this email.
                     </h6>
                   </div>
                   <div className="push-half-top push-bottom soft-half-bottom one-whole text-center">
@@ -288,7 +290,6 @@ class SignIn extends Component {
                       Register new account
                     </a>
                   </div>
-
                 </div>
               );
             }
@@ -388,7 +389,6 @@ class SignIn extends Component {
               </div>
             );
           })()}
-
         </Forms.Form>
       </div>
     );

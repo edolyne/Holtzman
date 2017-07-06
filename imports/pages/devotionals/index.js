@@ -110,8 +110,8 @@ const withDevotionals = graphql(DEVOTIONALS_QUERY, {
     loading: data.loading,
     done:
       data.content &&
-        !data.loading &&
-        data.content.length < data.variables.limit + data.variables.skip,
+      !data.loading &&
+      data.content.length < data.variables.limit + data.variables.skip,
     fetchMore: () =>
       data.fetchMore({
         variables: { ...data.variables, skip: data.content.length },

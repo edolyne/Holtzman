@@ -148,7 +148,6 @@ class HeaderWithoutData extends Component {
               </h6>
             );
           })()}
-
         </div>
 
         {(() => {

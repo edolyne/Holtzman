@@ -16,7 +16,9 @@ import { ImageLoader } from "../../UI/loading";
 
 type IWrapper = { children: Object };
 export const Wrapper = (props: IWrapper) =>
-  <div {...props}>{props.children}</div>;
+  <div {...props}>
+    {props.children}
+  </div>;
 
 export const createItemClasses = (
   itemClasses?: [string],

@@ -13,7 +13,9 @@ export default class ArticlesContent extends Component {
     const authors = this.props.article.authors;
     return (
       <section className="hard-sides hard-top">
-        <h2 className="capitalize">{article.title}</h2>
+        <h2 className="capitalize">
+          {article.title}
+        </h2>
         {(() => {
           if (!authors || !authors.length) return null;
           return (

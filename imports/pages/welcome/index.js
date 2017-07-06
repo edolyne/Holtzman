@@ -117,7 +117,9 @@ class Template extends Component {
             </Link>
           </div>
         </Slider>
-        <Link to="/" onClick={this.skip} style={skipStyles}>Skip</Link>
+        <Link to="/" onClick={this.skip} style={skipStyles}>
+          Skip
+        </Link>
       </div>
     );
   }

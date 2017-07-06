@@ -142,9 +142,8 @@ class AudioPlayerUtilityWithoutData extends Component {
       // ensure seconds are not greater than 60
       const realSec = Number(sec) % 60;
       // if there is a minute, return that. else, caclulate minutes from seconds
-      const realMin = Number(min) > 0
-        ? Number(min)
-        : Math.floor(Number(sec) / 60);
+      const realMin =
+        Number(min) > 0 ? Number(min) : Math.floor(Number(sec) / 60);
 
       // ensure minutes and seconds are 0 padded
       const formatSec = realSec < 10 ? `0${realSec}` : realSec;

@@ -71,8 +71,9 @@ export default createReducer(initial, {
     ...state,
     visible: action.visible,
     // do type check since statusBar is a boolean value
-    statusBar: typeof action.statusBar === "undefined"
-      ? initial.statusBar
-      : action.statusBar,
+    statusBar:
+      typeof action.statusBar === "undefined"
+        ? initial.statusBar
+        : action.statusBar,
   }),
 });

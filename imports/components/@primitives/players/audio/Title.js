@@ -68,7 +68,9 @@ export default class AudioTitle extends Component {
 
     return (
       <div>
-        <h4>{this.props.albumTitle}</h4>
+        <h4>
+          {this.props.albumTitle}
+        </h4>
         <h6 className="text-dark-tertiary flush">
           <span className="music-album-artist">
             {this.props.artistName}

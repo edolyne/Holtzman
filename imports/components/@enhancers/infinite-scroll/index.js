@@ -57,7 +57,11 @@ export default (reducer = defaultReducer, options) => WrappedComponent => {
         return (
           <div className="one-whole soft-double text-center display-inline-block">
             <p className="flush">
-              <small><em>{mergedOptions.doneText}</em></small>
+              <small>
+                <em>
+                  {mergedOptions.doneText}
+                </em>
+              </small>
             </p>
           </div>
         );

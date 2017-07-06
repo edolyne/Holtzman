@@ -9,9 +9,8 @@ type IRenderIcon = {
 };
 
 const RenderIcon = ({ payment, savedAccount }: IRenderIcon) => {
-  const masked = payment.type === "ach"
-    ? payment.accountNumber
-    : payment.cardNumber;
+  const masked =
+    payment.type === "ach" ? payment.accountNumber : payment.cardNumber;
   if (!masked) return null;
 
   const paymentType = cardType(payment, savedAccount);

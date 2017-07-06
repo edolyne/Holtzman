@@ -79,10 +79,11 @@ export default class SearchItem extends Component {
         onClick={inAppLink}
       >
         <div className={this.gridClasses()}>
-
           <div className={this.gridItemClasses()}>
             <div className="floating__item one-whole soft-half-sides">
-              <h6>{this.props.item.title}</h6>
+              <h6>
+                {this.props.item.title}
+              </h6>
               <p className={this.pClasses()}>
                 {this.props.item.description}
               </p>

@@ -29,7 +29,9 @@ export const TransactionList = ({ transactions }: ITransactionList) => {
                     return (
                       <div key={i}>
                         <div className="soft soft-half-left text-left">
-                          <h5>{year}</h5>
+                          <h5>
+                            {year}
+                          </h5>
                         </div>
                         <TransactionCard
                           transaction={transaction}
@@ -158,7 +160,11 @@ export default ({
         transactions.length > 0 &&
         !reloading &&
         done &&
-        <p><small><em>No More Contributions</em></small></p>}
+        <p>
+          <small>
+            <em>No More Contributions</em>
+          </small>
+        </p>}
       {ready && transactions.length > 0 && !reloading && !done && <Loading />}
     </div>
 
@@ -197,5 +203,4 @@ export default ({
             </div>}
         </div>
       </div>}
-
   </div>;

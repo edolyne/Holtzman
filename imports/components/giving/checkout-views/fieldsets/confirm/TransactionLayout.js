@@ -87,7 +87,11 @@ const TransactionLayout = ({
         >
           <h7 className="text-dark-tertiary flush">Campus:</h7>
           <p className="display-inline-block soft-half-left flush">
-            <em><small>{personal.campus}</small></em>
+            <em>
+              <small>
+                {personal.campus}
+              </small>
+            </em>
           </p>
         </div>}
 
@@ -110,14 +114,20 @@ const TransactionLayout = ({
           <div className="soft-half-bottom">
             <h7 className="text-dark-tertiary">Frequency:</h7>
             <p className="display-inline-block soft-half-left flush">
-              <em><small>{GIVING_SCHEDULES[schedule.frequency]}</small></em>
+              <em>
+                <small>
+                  {GIVING_SCHEDULES[schedule.frequency]}
+                </small>
+              </em>
             </p>
           </div>
           <div>
             <h7 className="text-dark-tertiary">Starting:</h7>
             <p className="display-inline-block soft-half-left flush">
               <em>
-                <small>{moment(schedule.start).format("MMM D, YYYY")}</small>
+                <small>
+                  {moment(schedule.start).format("MMM D, YYYY")}
+                </small>
               </em>
             </p>
           </div>
@@ -127,16 +137,12 @@ const TransactionLayout = ({
         className="soft-half-ends push-bottom hard-sides outlined--light outlined--bottom"
         style={{ borderWidth: "1px" }}
       >
-
         <div className="grid" style={{ verticalAlign: "middle" }}>
-
           <div
             className="grid__item one-quarter"
             style={{ verticalAlign: "middle" }}
           >
-            <h5 className="text-dark-secondary flush text-left">
-              Total
-            </h5>
+            <h5 className="text-dark-secondary flush text-left">Total</h5>
           </div>
 
           <div
@@ -147,7 +153,6 @@ const TransactionLayout = ({
               <Currency className="text-left" amount={monetize(total)} />
             </div>
           </div>
-
         </div>
       </div>
       {/* spacer */}
@@ -165,7 +170,6 @@ const TransactionLayout = ({
         changeAccounts={changeAccounts}
         savedAccount={savedAccount}
       />
-
     </div>
   </div>;
 

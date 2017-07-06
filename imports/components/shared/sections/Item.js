@@ -106,7 +106,6 @@ export const ChildItem = ({ section, go }) => {
             </ImageLoader>
           </div>
         </div>
-
       </ExternalLinkWrapper>
     </div>
   );
@@ -154,7 +153,9 @@ export const SingleItem = ({ section, go, children }) => {
           style={{ backgroundImage: `url('${section.image}')` }}
         >
           <div className="overlay__item floating__item ratio__item">
-            <h6 className="text-light-primary soft-left">{section.text}</h6>
+            <h6 className="text-light-primary soft-left">
+              {section.text}
+            </h6>
           </div>
         </ImageLoader>
       </ExternalLinkWrapper>
@@ -228,11 +229,9 @@ export default class SectionItem extends Component {
       <div className="soft-half-right soft-left soft-top background--dark-primary push-bottom">
         {/* <h4 className="soft-half-bottom text-light-primary text-center">{section.text}</h4>*/}
         <div className="grid ">
-
           {children.map((sectionItem, i) =>
             <ChildItem section={sectionItem} key={i} go={this.expandOrGo} />,
           )}
-
         </div>
       </div>
     );
@@ -287,7 +286,6 @@ export default class SectionItem extends Component {
                   </SingleItem>,
                 )}
               </div>
-
             </div>
           </div>
         </div>

@@ -85,15 +85,12 @@ export default class Tabs extends Component {
         )}
 
         <div className="grid text-left toggle-arrow soft-sides">
-
           <div
             className={`transition grid__item hard one-half toggle-arrow__item ${this
               .props.arrowClass || ""}`}
             style={this.arrowStyle()}
           />
-
         </div>
-
       </div>
     );
   }

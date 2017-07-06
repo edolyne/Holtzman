@@ -96,18 +96,32 @@ class DetailsWithoutData extends Component {
 }
 
 const ENTRIES_QUERY = gql`
-  query GetTaggedContent($tagName: String!, $limit: Int, $includeChannels: [String]) {
+  query GetTaggedContent(
+    $tagName: String!
+    $limit: Int
+    $includeChannels: [String]
+  ) {
     entries: taggedContent(
-      tagName: $tagName,
-      limit: $limit,
+      tagName: $tagName
+      limit: $limit
       includeChannels: $includeChannels
     ) {
       entryId: id
       title
       channelName
       status
-      meta { summary, urlTitle }
-      content { images(sizes: ["large"]) { fileName, fileType, fileLabel, url } }
+      meta {
+        summary
+        urlTitle
+      }
+      content {
+        images(sizes: ["large"]) {
+          fileName
+          fileType
+          fileLabel
+          url
+        }
+      }
     }
   }
 `;
@@ -135,16 +149,40 @@ const SCHEDULE_TRANSACTION_QUERY = gql`
         gateway
         start
         date
-        details { amount, account { name, description } }
-        payment { paymentType, accountNumber, id }
-        schedule { value, description }
+        details {
+          amount
+          account {
+            name
+            description
+          }
+        }
+        payment {
+          paymentType
+          accountNumber
+          id
+        }
+        schedule {
+          value
+          description
+        }
         transactions {
           id
           date
           status
           summary
-          person { firstName, lastName, photo }
-          details { id, amount, account { id, name } }
+          person {
+            firstName
+            lastName
+            photo
+          }
+          details {
+            id
+            amount
+            account {
+              id
+              name
+            }
+          }
         }
       }
     }

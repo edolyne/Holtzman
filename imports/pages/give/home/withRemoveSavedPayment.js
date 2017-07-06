@@ -68,7 +68,9 @@ export const EDIT_PAYMENT_MUTATION = gql`
       error
       code
       success
-      savedPayment { name }
+      savedPayment {
+        name
+      }
     }
   }
 `;

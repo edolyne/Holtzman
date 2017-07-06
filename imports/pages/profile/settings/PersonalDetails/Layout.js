@@ -75,9 +75,7 @@ export default class Layout extends Component {
           submit={this.submit}
         >
           <div className="push-double">
-            <h4 className="text-center">
-              My Personal Details
-            </h4>
+            <h4 className="text-center">My Personal Details</h4>
           </div>
 
           <h6 className="soft-bottom">Name</h6>
@@ -91,7 +89,6 @@ export default class Layout extends Component {
 
           <div className="grid">
             <div className="grid__item one-half">
-
               <Forms.Input
                 name="FirstName"
                 label="First Name"
@@ -101,7 +98,6 @@ export default class Layout extends Component {
               />
             </div>
             <div className="grid__item one-half">
-
               <Forms.Input
                 name="LastName"
                 label="Last Name"
@@ -151,9 +147,7 @@ export default class Layout extends Component {
                     items={days}
                   />
                 </div>
-
               </div>
-
             </div>
             <div className="grid__item two-fifths">
               <Forms.Select
@@ -196,11 +190,7 @@ export default class Layout extends Component {
               btnClasses.push("btn");
             }
 
-            return (
-              <button className={btnClasses.join(" ")}>
-                Update
-              </button>
-            );
+            return <button className={btnClasses.join(" ")}>Update</button>;
           })()}
         </Forms.Form>
       </div>

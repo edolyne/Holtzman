@@ -112,7 +112,10 @@ const STUDY_ENTRY_QUERY = gql`
   query GetEntriesFromStudy($id: ID!) {
     content: node(id: $id) {
       ... on Content {
-        studyEntries: children(channels: ["study_entries"], showFutureEntries: true) {
+        studyEntries: children(
+          channels: ["study_entries"]
+          showFutureEntries: true
+        ) {
           id
           entryId: id
           title

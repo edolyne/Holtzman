@@ -142,10 +142,11 @@ export default class Layout extends Component {
             />
 
             <div className="one-whole text-left">
-              <h6><em>Find a campus by city, state, or zip</em></h6>
+              <h6>
+                <em>Find a campus by city, state, or zip</em>
+              </h6>
             </div>
           </Forms.Form>
-
         </div>
         {/* End Search */}
 
@@ -179,7 +180,9 @@ export default class Layout extends Component {
                       style={style}
                     >
                       <div className="one-whole soft-sides text-left floating__item">
-                        <h4>{campus.name}</h4>
+                        <h4>
+                          {campus.name}
+                        </h4>
                         {(() => {
                           if (!campus.distance || !campus.distance.value) {
                             return null;
@@ -214,7 +217,6 @@ export default class Layout extends Component {
           </div>
         </div>
         {/* End Slider */}
-
       </div>
     );
   }

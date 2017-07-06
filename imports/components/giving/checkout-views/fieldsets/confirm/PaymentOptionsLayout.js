@@ -3,9 +3,7 @@
 import { SavedAccount } from "../shared";
 
 const Header = () =>
-  <h4 className="text-center flush-bottom">
-    Change Payment Account
-  </h4>;
+  <h4 className="text-center flush-bottom">Change Payment Account</h4>;
 
 type IPaymentOptionsLayout = {
   changeAccounts: Function,
@@ -50,7 +48,6 @@ const PaymentOptionsLayout = ({
       >
         Enter New Payment
       </button>
-
     </div>
   </div>;
 

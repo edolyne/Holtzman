@@ -34,8 +34,7 @@ const SavePaymentCheckBox = ({
           <small>
             <em>
               To save a payment, please give a one time contribution. We are
-              sorry for any
-              inconvenience this may cause.
+              sorry for any inconvenience this may cause.
             </em>
           </small>
         </p>

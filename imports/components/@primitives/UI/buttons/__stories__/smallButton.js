@@ -1,4 +1,3 @@
-
 /* eslint-disable */
 import { storiesOf } from "@kadira/storybook";
 import withReadme from "storybook-readme/with-readme";

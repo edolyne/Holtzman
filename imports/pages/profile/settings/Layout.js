@@ -58,9 +58,7 @@ const Layout = ({ person, children, mobile, onUpload }) =>
             </em>
           </p>
         </div>
-
       </Right>
-
     </Split>
 
     <Left scroll classes={["background--light-primary"]}>

@@ -49,7 +49,11 @@ const Layout = ({ group, leaders, isLeader, join, loginParam }) =>
             let string = `${x.person.nickName || x.person.firstName} ${x.person
               .lastName}`;
             if (leaders.length - 1 !== i) string += ", ";
-            return <span key={i}>{string}</span>;
+            return (
+              <span key={i}>
+                {string}
+              </span>
+            );
           })}
         </h5>
         {leaders.map((leader, i) =>
@@ -70,7 +74,6 @@ const Layout = ({ group, leaders, isLeader, join, loginParam }) =>
 
     {/* Main card stacks */}
     <section className="soft-double-sides@lap-wide-and-up soft-half-sides soft-half-ends flush-sides">
-
       {/* Join Group CTA */}
       {/* shows manage group if you are a leader / can manage */}
       <div className="card outlined outlined--light soft-sides-@lap-and-up">
@@ -119,7 +122,6 @@ const Layout = ({ group, leaders, isLeader, join, loginParam }) =>
       <div className="card outlined outlined--light hard one-whole">
         <div className="card__item push-half-top@handheld">
           <div className="soft-left@lap-wide-and-up soft soft-double-bottom">
-
             <h5 className="soft-half-ends">Group Details</h5>
 
             {/* Group Meeting Schedule */}
@@ -143,9 +145,7 @@ const Layout = ({ group, leaders, isLeader, join, loginParam }) =>
               if (!loc) return null;
               return (
                 <div className="soft-bottom">
-                  <h7 className="text-dark-secondary">
-                    Address
-                  </h7>
+                  <h7 className="text-dark-secondary">Address</h7>
                   <h6 className="text-dark-secondary soft-half-top flush-bottom">
                     {loc.location.city}, {loc.location.state}
                   </h6>
@@ -158,9 +158,7 @@ const Layout = ({ group, leaders, isLeader, join, loginParam }) =>
               if (!group.campus || !group.campus.name) return null;
               return (
                 <div className="soft-bottom">
-                  <h7 className="text-dark-secondary">
-                    Campus
-                  </h7>
+                  <h7 className="text-dark-secondary">Campus</h7>
                   <h6 className="text-dark-secondary soft-half-top flush-bottom">
                     {group.campus.name}
                   </h6>
@@ -178,7 +176,6 @@ const Layout = ({ group, leaders, isLeader, join, loginParam }) =>
                   : ""}
               </h6>
             </div>
-
           </div>
         </div>
       </div>
@@ -187,7 +184,6 @@ const Layout = ({ group, leaders, isLeader, join, loginParam }) =>
       <div className="card outlined outlined--light hard one-whole">
         <div className="card__item push-half-top@handheld">
           <div className="soft-left@lap-wide-and-up soft soft-bottom">
-
             <h5 className="soft-half-ends">More Information</h5>
 
             {/* Group Description */}
@@ -242,7 +238,9 @@ const Layout = ({ group, leaders, isLeader, join, loginParam }) =>
                 {(() => {
                   if (!group.type || group.type === "Interests") return null;
                   return (
-                    <span className="tag push-half-right">{group.type}</span>
+                    <span className="tag push-half-right">
+                      {group.type}
+                    </span>
                   );
                 })()}
                 {(() => {

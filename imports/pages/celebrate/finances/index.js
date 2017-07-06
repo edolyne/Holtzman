@@ -276,10 +276,9 @@ export const Finances = () => {
         <h3 className="text-center push-top">Annual Audit</h3>
         <p className="constrain-copy push-bottom">
           NewSpring is audited annually by an external accounting firm according
-          to Generally
-          Accepted Accounting Principles. God calls His people to live above
-          reproach, so for us,
-          the annual audit is a financial and spiritual responsibility (<a
+          to Generally Accepted Accounting Principles. God calls His people to
+          live above reproach, so for us, the annual audit is a financial and
+          spiritual responsibility (<a
             href={
               "https://www.bible.com/search/bible?q=philippians%202:15&version_id=111"
             }

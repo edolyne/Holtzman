@@ -8,9 +8,7 @@ type IListItem = {
 
 const ListItem = ({ transaction }: IListItem) =>
   <div className="soft-half-ends hard-sides">
-
     <div className="grid" style={{ verticalAlign: "middle" }}>
-
       <div className="grid__item one-half" style={{ verticalAlign: "middle" }}>
         <h5 className="text-dark-primary flush text-left">
           {transaction.label}
@@ -27,7 +25,6 @@ const ListItem = ({ transaction }: IListItem) =>
           className="text-left display-inline-block"
         />
       </div>
-
     </div>
   </div>;
 

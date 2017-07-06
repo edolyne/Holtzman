@@ -59,9 +59,13 @@ export default class StudiesEntryListItem extends Component {
             className="background--light-primary floating locked-left locked-top"
             style={this.orderStyle()}
           >
-            <h5 className="floating__item flush">{order + 1}</h5>
+            <h5 className="floating__item flush">
+              {order + 1}
+            </h5>
           </div>
-          <h4>{studyEntry.title}</h4>
+          <h4>
+            {studyEntry.title}
+          </h4>
         </div>
       </Link>
     );

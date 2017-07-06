@@ -35,7 +35,6 @@ export default class ScriptureWrapper extends Component {
         data-status-scroll-item
         data-status-scroll-offset={-50}
       >
-
         {scriptures
           .list(studyEntry, { commas: false })
           .map((scripture, i) =>
@@ -46,9 +45,8 @@ export default class ScriptureWrapper extends Component {
           Scripture taken from The Holy Bible, English Standard Version.
           Copyright &copy;2001 by{" "}
           <a href="http://www.crosswaybibles.org">Crossway Bibles</a>, a
-          publishing ministry of Good
-          News Publishers. Used by permission. All rights reserved. Text
-          provided by the{" "}
+          publishing ministry of Good News Publishers. Used by permission. All
+          rights reserved. Text provided by the{" "}
           <a href="http://www.gnpcb.org/esv/share/services/">
             Crossway Bibles Web Service
           </a>.

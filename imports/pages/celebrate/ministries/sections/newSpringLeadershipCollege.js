@@ -57,10 +57,9 @@ const NewSpringLeadershipCollege = () =>
                 NewSpring Leadership College
               </a>{" "}
               is a two-year program to raise up passionate leaders for the local
-              church. At
-              NewSpring Leadership College, students receive practical Bible
-              teaching and leadership
-              training as well as real ministry responsibility and experience.
+              church. At NewSpring Leadership College, students receive
+              practical Bible teaching and leadership training as well as real
+              ministry responsibility and experience.
             </p>
           </div>
         </div>

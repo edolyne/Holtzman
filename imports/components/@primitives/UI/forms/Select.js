@@ -193,9 +193,10 @@ export default class Select extends Component {
     const value = this.props.selected
       ? { value: this.props.selected || "" }
       : {};
-    const defaultValue = this.props.defaultValue && !this.props.selected
-      ? { defaultValue: this.props.defaultValue || "" }
-      : {};
+    const defaultValue =
+      this.props.defaultValue && !this.props.selected
+        ? { defaultValue: this.props.defaultValue || "" }
+        : {};
 
     return (
       <div className={`${inputclasses.join(" ")} ${css(SelectClasses.select)}`}>
@@ -251,7 +252,6 @@ export default class Select extends Component {
         </select>
 
         {this.renderHelpText()}
-
       </div>
     );
   }

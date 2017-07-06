@@ -145,11 +145,15 @@ const withGroupAttributes = graphql(GROUP_ATTRIBUTES_QUERY, {
 });
 
 const TAGGED_CONTENT_QUERY = gql`
-  query GetTaggedContent($tagName: String!, $limit: Int, $includeChannels: [String]) {
+  query GetTaggedContent(
+    $tagName: String!
+    $limit: Int
+    $includeChannels: [String]
+  ) {
     entries: taggedContent(
-      tagName: $tagName,
-      limit: $limit,
-      includeChannels: $includeChannels,
+      tagName: $tagName
+      limit: $limit
+      includeChannels: $includeChannels
       cache: false
     ) {
       entryId: id

@@ -53,14 +53,12 @@ export class FollowingContainer extends Component {
         className="background--light-secondary hard-sides"
         style={{ marginTop: "-20px" }}
       >
-
         <h7 className={this.h7Classes}>
           Personalize your NewSpring Home and follow the types of content you
           care about.
         </h7>
 
         <div className={this.containerClasses}>
-
           {topics.map((contentItem, i) => {
             if (
               contentItem !== "Events" ||
@@ -78,9 +76,7 @@ export class FollowingContainer extends Component {
             }
             return null;
           })}
-
         </div>
-
       </section>
     );
   }

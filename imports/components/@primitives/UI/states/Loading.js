@@ -8,7 +8,9 @@ const Loading = ({ msg, style }) =>
         <Spinner
           styles={{ borderColor: "#fff #6BAC43 #fff #fff", borderWidth: "7px" }}
         />
-        <h4 className="text-light-primary">{msg}</h4>
+        <h4 className="text-light-primary">
+          {msg}
+        </h4>
       </div>
     </div>
   </WindowLoading>;

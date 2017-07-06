@@ -38,7 +38,9 @@ type ILayout = {
 const Layout = ({ title, content, loading }: ILayout) =>
   <section className="soft-half-sides@palm soft-double@palm-wide soft-top soft-half-bottom background--light-secondary">
     <div className="one-whole text-center">
-      <h5 className="flush soft-bottom">{title}</h5>
+      <h5 className="flush soft-bottom">
+        {title}
+      </h5>
     </div>
     <LoadingContent loading={loading} />
     <div>

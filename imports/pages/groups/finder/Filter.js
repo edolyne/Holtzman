@@ -72,7 +72,6 @@ class FilterWithoutData extends Component {
     ];
     return (
       <div>
-
         {/* filter internals */}
         {(() => {
           if (!showTags) return null; // hidden
@@ -80,17 +79,13 @@ class FilterWithoutData extends Component {
           return (
             <div>
               <div className="soft-half-sides soft-top soft-double-top@anchored text-center background--light-primary">
-                <h4 className="soft-half-bottom flush-bottom">
-                  Featured Tags
-                </h4>
+                <h4 className="soft-half-bottom flush-bottom">Featured Tags</h4>
                 <div className="two-thirds@anchored display-inline-block soft-ends@anchored">
                   {tags.map((tag, key) => <Tag key={key} val={tag.value} />)}
                 </div>
               </div>
               <div className="soft-half-sides soft-ends text-center background--light-primary">
-                <h4 className="soft-half-bottom flush-bottom">
-                  Day of Week
-                </h4>
+                <h4 className="soft-half-bottom flush-bottom">Day of Week</h4>
                 <div className="two-thirds@anchored display-inline-block soft-ends@anchored">
                   {daysOfWeek.map((day, key) =>
                     <Tag key={key} val={day} urlKey="schedules" />,
@@ -98,9 +93,7 @@ class FilterWithoutData extends Component {
                 </div>
               </div>
               <div className="outlined--light outlined--bottom soft-half-sides soft-ends soft-double-bottom@anchored text-center background--light-primary">
-                <h4 className="soft-half-bottom flush-bottom">
-                  Campuses
-                </h4>
+                <h4 className="soft-half-bottom flush-bottom">Campuses</h4>
                 <div className="two-thirds@anchored display-inline-block soft-ends@anchored">
                   {campuses.map((campus, key) =>
                     <Tag key={key} val={campus.name} urlKey="campuses" />,
@@ -120,7 +113,6 @@ class FilterWithoutData extends Component {
                 "soft-double@anchored text-left background--light-primary"
               }
             >
-
               <Forms.Form
                 classes={["hard", "display-inline-block", "one-whole"]}
                 submit={e => this.findByQuery(e)}
@@ -161,7 +153,6 @@ class FilterWithoutData extends Component {
                   </h6>
                 </div>
               </Forms.Form>
-
             </div>
           );
         })()}

@@ -264,7 +264,6 @@ export default class Input extends Component {
         style={style || {}}
         data-spec="input-wrapper"
       >
-
         <RenderLabel
           hideLabel={hideLabel}
           id={id}
@@ -293,7 +292,6 @@ export default class Input extends Component {
         {children}
 
         {this.renderHelpText()}
-
       </div>
     );
   }

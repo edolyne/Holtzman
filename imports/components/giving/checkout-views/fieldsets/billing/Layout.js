@@ -9,11 +9,7 @@ type IHeader = {
 
 const Header = ({ override }: IHeader) => {
   if (override) return override;
-  return (
-    <h4 className="text-center">
-      Billing Address
-    </h4>
-  );
+  return <h4 className="text-center">Billing Address</h4>;
 };
 
 type INextButton = {
@@ -85,7 +81,6 @@ const Layout = ({
     {children}
 
     <div className="soft-sides">
-
       <Forms.Input
         name="streetAddress"
         label="Street Address"
@@ -150,7 +145,6 @@ const Layout = ({
         className={`${transactionType !== "savedPayment" ? "" : "flush-left"}`}
       />
     </div>
-
   </div>;
 
 export default Layout;

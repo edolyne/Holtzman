@@ -45,7 +45,6 @@ const Layout = ({ account }: ILayout) =>
         }
         mobile={false}
       />
-
     </Split>
     <Left scroll classes={["background--light-primary"]}>
       <Link
@@ -68,8 +67,9 @@ const Layout = ({ account }: ILayout) =>
       </Link>
       <div className="soft@lap-and-up soft-double-top@lap-and-up">
         <div className="soft soft-double-bottom soft-double-top@lap-and-up">
-
-          <h2>{account.name}</h2>
+          <h2>
+            {account.name}
+          </h2>
           <div dangerouslySetInnerHTML={{ __html: account.description }} />
         </div>
       </div>
@@ -81,7 +81,6 @@ const Layout = ({ account }: ILayout) =>
           </div>
         </div>
       </div>
-
     </Left>
   </div>;
 

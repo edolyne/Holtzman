@@ -35,7 +35,6 @@ const BankFields = ({ payment, saveData, validate }: IBankFields) => {
       />
 
       <div className="grid">
-
         <div className="grid__item one-whole">
           <Forms.Select
             name="billing-account-type"

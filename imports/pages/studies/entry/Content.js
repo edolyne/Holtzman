@@ -46,7 +46,9 @@ export default class Content extends Component {
           <Video id={studyEntry.content.ooyalaId} />}
 
         <div className="soft soft-double@palm-wide-and-up push-top">
-          <h2 className="capitalize">{studyEntry.title}</h2>
+          <h2 className="capitalize">
+            {studyEntry.title}
+          </h2>
 
           {studyEntry.content.scripture &&
             <a
@@ -58,7 +60,6 @@ export default class Content extends Component {
             </a>}
 
           <div dangerouslySetInnerHTML={react.markup(studyEntry)} />
-
         </div>
 
         {studyEntry.content.tags > 0 &&
@@ -66,7 +67,6 @@ export default class Content extends Component {
             excludedIds={[studyEntry.id]}
             tags={studyEntry.content.tags || defaultArray}
           />}
-
       </section>
     );
   }

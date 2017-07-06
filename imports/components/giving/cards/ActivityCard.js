@@ -47,7 +47,9 @@ const ActivityCard = ({
   <div className="card">
     <div className={getClasses(status)}>
       <div className="floating text-left">
-        <i className="soft-half-right">{getIcon(status)}</i>
+        <i className="soft-half-right">
+          {getIcon(status)}
+        </i>
         {date &&
           <h5
             className={`${status === "success"
@@ -57,7 +59,11 @@ const ActivityCard = ({
             {moment(date).format("MMM D, YYYY")}
           </h5>}
       </div>
-      {typeof message === "string" ? <p>{message}</p> : message}
+      {typeof message === "string"
+        ? <p>
+          {message}
+        </p>
+        : message}
       {linkText &&
         linkUrl &&
         <Link

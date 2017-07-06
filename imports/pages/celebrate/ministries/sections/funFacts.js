@@ -50,7 +50,6 @@ const FunFacts = () =>
       <div className="constrain-page">
         <div className="grid__item one-whole text-dark-primary text-center hard">
           <div className="soft-double@lap-and-up soft push-double@lap-and-up soft-double-bottom push-bottom">
-
             <div className="one-whole text-center push-bottom push-double-top@handheld soft-top">
               <h1 className="uppercase">Fun Facts</h1>
             </div>
@@ -71,7 +70,9 @@ const FunFacts = () =>
                     {statistic.value}
                   </h1>
                 </FitText>
-                <h4>{statistic.label}</h4>
+                <h4>
+                  {statistic.label}
+                </h4>
               </div>,
             )}
           </div>

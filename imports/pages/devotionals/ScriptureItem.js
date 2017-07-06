@@ -23,7 +23,11 @@ export default class ScriptureItem extends Component {
         <p className="small push-half-left display-inline-block">ESV</p>
         {(() => {
           if (!scriptureData) {
-            return <div className="one-whole text-center"><Loading /></div>;
+            return (
+              <div className="one-whole text-center">
+                <Loading />
+              </div>
+            );
           }
           return <div dangerouslySetInnerHTML={{ __html: scriptureData }} />;
         })()}

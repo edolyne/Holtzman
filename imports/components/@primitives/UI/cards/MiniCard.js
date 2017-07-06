@@ -35,13 +35,18 @@ const MiniCard = ({
           {title}
         </h6>
 
-        {description && <p className="text-dark-primary">{description}</p>}
+        {description &&
+          <p className="text-dark-primary">
+            {description}
+          </p>}
 
         {(icon || category) &&
           <div className="display-inline-block">
             {icon && <span className={`${icon} text-dark-tertiary`} />}
             {category &&
-              <h7 className="text-dark-tertiary soft-half-left">{category}</h7>}
+              <h7 className="text-dark-tertiary soft-half-left">
+                {category}
+              </h7>}
           </div>}
       </div>
       <div
