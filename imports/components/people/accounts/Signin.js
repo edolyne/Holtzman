@@ -237,7 +237,6 @@ class SignIn extends Component {
                       person.id === this.props.data.id ||
                       person.id === this.state.selectedPerson;
                     return (
-                      // eslint-disable-next-line jsx-a11y/no-static-element-interactions
                       <div
                         className="text-left soft-double-left push-top relative"
                         key={key}
