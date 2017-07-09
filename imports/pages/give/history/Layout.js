@@ -74,7 +74,9 @@ let canPrint;
 // eslint-disable-next-line
 try {
   canPrint = !!new Blob();
-} catch (e) {}
+} catch (e) {
+  console.error(e);
+}
 
 export default ({
   transactions,

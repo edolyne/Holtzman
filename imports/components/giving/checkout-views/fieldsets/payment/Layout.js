@@ -59,6 +59,21 @@ const NextButton = ({ payment, next }: INextButton) => {
   );
 };
 
+const savePaymentCheckBoxSnippet = (
+  savedAccount,
+  savePayment,
+  shouldSaveState,
+  schedule,
+  transactionType,
+) =>
+  <SavePaymentCheckBox
+    savedAccount={savedAccount}
+    savePayment={savePayment}
+    shouldSaveState={shouldSaveState}
+    schedule={schedule}
+    transactionType={transactionType}
+  />;
+
 type ILayout = {
   back: Function,
   children?: React$Element<any>,
@@ -119,13 +134,13 @@ const Layout = ({
         validate={validate}
       />
       {transactionType !== "savedPayment"
-        ? <SavePaymentCheckBox
-            savedAccount={savedAccount}
-            savePayment={savePayment}
-            shouldSaveState={shouldSaveState}
-            schedule={schedule}
-            transactionType={transactionType}
-          />
+        ? savePaymentCheckBoxSnippet(
+            savedAccount,
+            savePayment,
+            shouldSaveState,
+            schedule,
+            transactionType,
+          )
         : null}
       <SavePaymentInput
         saveName={saveName}

@@ -1,5 +1,4 @@
 // @flow
-import gql from "graphql-tag";
 import { graphql } from "react-apollo";
 import Layout from "./Layout";
 import { PRELOAD_PERSON } from "../../../data/store/accounts/saga";

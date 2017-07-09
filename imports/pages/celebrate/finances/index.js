@@ -5,7 +5,6 @@ import Currency from "../../../components/@primitives/typography/currency";
 import FitText from "../components/fit-text";
 import Meta from "../../../components/shared/meta";
 import ProgressBar from "../../../components/giving/giving-progress";
-import Story from "../components/story";
 import inAppLink from "../../../util/inAppLink";
 
 const fundData = [
@@ -292,6 +291,7 @@ export const Finances = () => {
           <a
             className="btn push-bottom"
             target="_blank"
+            rel="noopener noreferrer"
             href="https://s3.amazonaws.com/ns.assets/apollos/annual+report/2016/2016+Audit.pdf"
             onClick={inAppLink}
           >

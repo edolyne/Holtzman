@@ -10,9 +10,8 @@ import { Left } from "../../components/@primitives/layout/split";
 
 import ApollosPullToRefresh from "../../components/@enhancers/pull-to-refresh";
 import infiniteScroll from "../../components/@enhancers/infinite-scroll";
-import { canSee } from "../../components/@enhancers/security-roles";
 
-import FeedItem from "../../components/content/feed-item-card";
+import FeedItemCard from "../../components/content/feed-item-card";
 import { topics } from "../../components/people/profile/following";
 import { nav as navActions } from "../../data/store";
 import Headerable from "../../deprecated/mixins/mixins.Header";
@@ -50,7 +49,7 @@ class HomeWithoutData extends Component {
         key={i}
       >
         {typeof item === "number" && <FeedItemSkeleton />}
-        {typeof item !== "number" && <FeedItem item={item} />}
+        {typeof item !== "number" && <FeedItemCard item={item} />}
       </div>,
     );
   };

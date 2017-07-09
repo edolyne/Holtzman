@@ -3,7 +3,7 @@ import makeNewGuid from "../../../util/guid";
 
 let HomeId = false;
 let BillingAddressId = false;
-export function upsertLocations(PersonId, doc) {
+export default function upsertLocations(PersonId, doc) {
   // eslint-disable-line
   let Location = doc;
   if (!PersonId || !Location) return;

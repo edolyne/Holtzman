@@ -287,6 +287,7 @@ Layout.propTypes = {
   leaders: PropTypes.array.isRequired,
   isLeader: PropTypes.bool.isRequired,
   join: PropTypes.func.isRequired,
+  loginParam: PropTypes.string.isRequired,
 };
 
 export default Layout;

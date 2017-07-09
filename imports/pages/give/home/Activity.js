@@ -92,6 +92,15 @@ export class GivingActivity extends Component {
         ? transaction.details[0].amount
         : transaction.details[0].amount.toFixed(2);
 
+    let snippet = "";
+    if (transaction.details.length > 1) {
+      snippet = (
+        <span>
+          and<strong> {transaction.details[1].name} </strong>
+        </span>
+      );
+    }
+
     if (
       (transaction.status === null ||
         transaction.status === "Success" ||
@@ -118,12 +127,7 @@ export class GivingActivity extends Component {
         <p>
           Your {scheduled ? "scheduled " : ""}contribution to
           <strong> {transaction.details[0].account.name} </strong>
-          {transaction.details.length > 1
-            ? <span>
-                and<strong> {transaction.details[1].name} </strong>
-            </span>
-            : null}{" "}
-          was unsuccessful.
+          {transaction.details.length > 1 ? snippet : null} was unsuccessful.
           {transaction.statusMessage !== null &&
           transaction.statusMessage !== ""
             ? ` Unfortunately, ${transaction.statusMessage}.`
@@ -136,12 +140,8 @@ export class GivingActivity extends Component {
         <p>
           Your {scheduled ? "scheduled " : ""}contribution to
           <strong> {transaction.details[0].account.name} </strong>
-          {transaction.details.length > 1
-            ? <span>
-                and<strong> {transaction.details[1].name} </strong>
-            </span>
-            : null}{" "}
-          is <strong>pending</strong>.
+          {transaction.details.length > 1 ? snippet : null} is{" "}
+          <strong>pending</strong>.
         </p>
       );
     } else {

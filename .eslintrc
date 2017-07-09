@@ -48,6 +48,7 @@
     "import/no-unresolved": [2, { "ignore": [
       "^meteor/*", "^/imports/*"
     ] }],
+    "guard-for-in": 0,
     "jsx-a11y/anchor-has-content": 0,
     "jsx-a11y/aria-props": 0,
     "jsx-a11y/aria-proptypes": 0,
@@ -73,9 +74,12 @@
     "jsx-a11y/tabindex-no-positive": 0,
     "no-bitwise": 0,
     "no-cond-assign": 0,
+    "no-console": 0,
+    "no-confusing-arrow": 0,
     "no-mixed-operators": 0,
     "no-param-reassign": 0,
     "no-plusplus": 0,
+    "no-restricted-syntax": 0,
     "no-underscore-dangle": 0,
     "no-useless-escape": 0,
     "prettier/prettier": [

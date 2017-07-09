@@ -18,8 +18,7 @@ import Headerable from "../../../deprecated/mixins/mixins.Header";
 import Shareable from "../../../deprecated/mixins/mixins.Shareable";
 import canLike from "../../../components/@enhancers/likes/toggle";
 
-import { nav as navActions } from "../../../data/store";
-import { modal } from "../../../data/store";
+import { nav as navActions, modal } from "../../../data/store";
 
 import Layout from "./Layout";
 import Join from "./Join";
@@ -140,10 +139,6 @@ class TemplateWithoutData extends Component {
     }
   }
 
-  componentWillUnmount() {
-    this.props.dispatch(modal.update({ onFinished: null }));
-  }
-
   componentWillReceiveProps(nextProps) {
     // don't show like or share buttons for non-community groups (!== 25)
     if (
@@ -154,6 +149,10 @@ class TemplateWithoutData extends Component {
     ) {
       nextProps.dispatch(navActions.setLevel("BASIC_CONTENT"));
     }
+  }
+
+  componentWillUnmount() {
+    this.props.dispatch(modal.update({ onFinished: null }));
   }
 
   closeModal = e => {

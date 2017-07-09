@@ -61,8 +61,8 @@ const ActivityCard = ({
       </div>
       {typeof message === "string"
         ? <p>
-          {message}
-        </p>
+            {message}
+          </p>
         : message}
       {linkText &&
         linkUrl &&

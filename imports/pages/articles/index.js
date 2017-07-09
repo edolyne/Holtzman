@@ -16,7 +16,7 @@ import ApollosPullToRefresh from "../../components/@enhancers/pull-to-refresh";
 
 import Single from "./Single";
 
-import FeedItem from "../../components/content/feed-item-card";
+import FeedItemCard from "../../components/content/feed-item-card";
 
 class ArticlesWithoutData extends Component {
   static propTypes = {
@@ -51,7 +51,7 @@ class ArticlesWithoutData extends Component {
       >
         {(() => {
           if (typeof article === "number") return <FeedItemSkeleton />;
-          return <FeedItem item={article} />;
+          return <FeedItemCard item={article} />;
         })()}
       </div>,
     );

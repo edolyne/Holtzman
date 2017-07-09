@@ -10,7 +10,7 @@ import { addSaga } from "../utilities";
 
 import actions from "./actions";
 
-export const PRELOAD_PERSON = gql`
+const PRELOAD_PERSON = gql`
   query GetPersonData {
     person: currentPerson {
       id
@@ -54,6 +54,8 @@ export const PRELOAD_PERSON = gql`
     }
   }
 `;
+
+export default PRELOAD_PERSON;
 
 let inFlight = false;
 // Check for availibilty of account
