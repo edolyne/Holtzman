@@ -41,7 +41,6 @@ class HomeWithoutData extends Component {
     if (data && data.feed) {
       feedItems = data.feed.slice(0);
     }
-    console.log("feedItems = ", feedItems);
     return feedItems.map((item, i) =>
       <div
         className={
@@ -104,9 +103,27 @@ const contentFragment = gql`
   }
 `;
 
+const rockContentFragment = gql`
+  fragment RockContentForFeed on RockContent {
+    __typename
+    id
+    rockTitle: title
+    entrydate
+    channel {
+      name
+    }
+    channelName
+    image
+  }
+`;
+
 const CONTENT_FEED_QUERY = gql`
   query HomeFeed($filters: [String]!, $options: String!, $limit: Int!, $skip: Int!, $cache: Boolean!) {
     feed: userFeed(filters: $filters, options: $options, limit: $limit, skip: $skip, cache: $cache) {
+      __typename
+      ... on RockContent{
+        ...RockContentForFeed
+      }
       ... on Content {
         ...ContentForFeed
         parent {
@@ -116,6 +133,7 @@ const CONTENT_FEED_QUERY = gql`
     }
   }
   ${contentFragment}
+  ${rockContentFragment}
 `;
 
 const getTopics = (opts) => {

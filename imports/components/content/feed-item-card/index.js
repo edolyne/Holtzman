@@ -71,15 +71,15 @@ const categoryClasses = (item: Object): string =>
 
 const likeClasses = (item: Object, isLiked): string => {
   const classes = ["text-right", "float-right", "flush-bottom", "icon-like"];
-  if (!isLight(item)) {		
+  if (!isLight(item)) {
     classes.push("text-light-primary");
-  } else {		
+  } else {
     classes.push("text-dark-secondary");
   }
 
-  if (isLiked) classes.push("icon-like-solid");	
+  if (isLiked) classes.push("icon-like-solid");
 
-  return classes.join(" ");		
+  return classes.join(" ");
 };
 
 const iconClasses = (item: Object): string => {
@@ -138,7 +138,7 @@ type IFeedItem = {
   toggleLike: () => void,
   disableLike?: boolean,
   onClick?: (e: Event) => void,
-  link?: string,
+  link?: string
 };
 
 export const stopClick = (fn: () => void) => (e: Event) => {
@@ -159,14 +159,7 @@ const likeStyles = {
   zIndex: 10,
 };
 
-export const FeedItem = ({
-  item,
-  isLiked,
-  toggleLike,
-  disableLike,
-  onClick,
-  link,
-}: IFeedItem) => (
+export const FeedItem = ({ item, isLiked, toggleLike, disableLike, onClick, link }: IFeedItem) =>
   <Card
     link={link || content.links(item)}
     onClick={onClick}
@@ -178,21 +171,25 @@ export const FeedItem = ({
     itemStyles={itemStyles(item)}
     linkAll
   >
-    <style>{overlayStyles(item)}</style>
+    <style>
+      {overlayStyles(item)}
+    </style>
 
     <div className="text-left">
-      <h4 className={h4Classes(item)}>{item.title}</h4>
+      <h4 className={h4Classes(item)}>
+        {item.title}
+      </h4>
       <i className={iconClasses(item)} />
-      <h7 className={categoryClasses(item)}>{categories.name(item)}</h7>
-      {!disableLike && (
+      <h7 className={categoryClasses(item)}>
+        {categories.name(item)}
+      </h7>
+      {!disableLike &&
         <h7
           onClick={stopClick(toggleLike)}
           style={likeStyles}
           className={likeClasses(item, isLiked)}
-        />
-      )}
+        />}
     </div>
-  </Card>
-);
+  </Card>;
 
 export default canLike(({ item: { entryId } }: IFeedItem) => entryId, false)(FeedItem);
